@@ -1,0 +1,30 @@
+{
+  "name": "ember-cli-postcss",
+  "version": "1.0.0",
+  "description": "Use postcss to process your css with a large selection of JavaScript plug-ins.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffjewiss/ember-cli-postcss"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffjewiss/ember-cli-postcss/issues"
+  },
+  "homepage": "https://github.com/jeffjewiss/ember-cli-postcss",
+  "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "broccoli-postcss": "^1.0.0",
+    "ember-cli-version-checker": "^1.0.2"
+  },
+  "keywords": [
+    "ember-addon",
+    "css",
+    "prefix",
+    "preprocess",
+    "postprocess",
+    "postcss"
+  ],
+  "ember-addon": {
+    "configPath": "tests/dummy/config"
+  }
+}
