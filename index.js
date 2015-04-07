@@ -10,13 +10,18 @@ function PostCSSPlugin (plugins, options) {
   this.plugins = plugins;
 }
 
-PostCSSPlugin.prototype.toTree = function (tree, inputPath, outputPath, options) {
+PostCSSPlugin.prototype.toTree = function (tree, inputPath, outputPath) {
   var trees = [tree];
-  if (this.options.includePaths) trees = trees.concat(this.options.includePaths);
+
+  if (this.options.includePaths) {
+    trees = trees.concat(this.options.includePaths);
+  }
+
   inputPath += '/' + this.options.inputFile;
   outputPath += '/' + this.options.outputFile;
+
   return new PostcssCompiler(trees, inputPath, outputPath, this.plugins);
-}
+};
 
 module.exports = {
   name: 'Ember CLI Postcss',
