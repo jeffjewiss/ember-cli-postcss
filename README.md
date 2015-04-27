@@ -44,7 +44,7 @@ Install the autoprefixer plugin:
 npm i --save-dev autoprefixer
 ```
 
-Specify some plugins in your Brocfile:
+Specify some plugins in your Brocfile.js:
 
 ```javascript
 var EmberApp = require(‘ember-cli/lib/broccoli/ember-app’);
@@ -62,4 +62,6 @@ var app = new EmberApp({
     ]
   }
 });
+
+module.exports = app.toTree();
 ```
