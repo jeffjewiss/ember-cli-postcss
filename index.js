@@ -1,13 +1,12 @@
 var PostcssCompiler = require('broccoli-postcss');
 var checker = require('ember-cli-version-checker');
 
-function PostCSSPlugin (plugins, options) {
+// PostCSSPlugin constructor
+function PostCSSPlugin (options) {
   this.name = 'ember-cli-postcss';
-  options = options || {};
-  options.inputFile = options.inputFile || 'app.css';
-  options.outputFile = options.outputFile || 'app.css';
   this.options = options;
-  this.plugins = plugins;
+  this.plugins = options.plugins;
+  this.map = options.map;
 }
 
 PostCSSPlugin.prototype.toTree = function (tree, inputPath, outputPath) {
@@ -20,7 +19,7 @@ PostCSSPlugin.prototype.toTree = function (tree, inputPath, outputPath) {
   inputPath += '/' + this.options.inputFile;
   outputPath += '/' + this.options.outputFile;
 
-  return new PostcssCompiler(trees, inputPath, outputPath, this.plugins);
+  return new PostcssCompiler(trees, inputPath, outputPath, this.plugins, this.map);
 };
 
 module.exports = {
@@ -30,12 +29,17 @@ module.exports = {
   },
   included: function included (app) {
     this.app = app;
+    // Initialize options if none were passed
     var options = app.options.postcssOptions || {};
-    var plugins = this.plugins = options.plugins || [];
 
+    // Set defaults if none were passed
+    options.map = options.map || {};
+    options.plugins = options.plugins || [];
+    options.inputFile = options.inputFile || 'app.css';
     options.outputFile = options.outputFile || this.project.name() + '.css';
 
-    app.registry.add('css', new PostCSSPlugin(plugins, options));
+    // Add to registry and pass options
+    app.registry.add('css', new PostCSSPlugin(options));
 
     if (this.shouldSetupRegistryInIncluded()) {
       this.setupPreprocessorRegistry('parent', app.registry);
