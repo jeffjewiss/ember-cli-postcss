@@ -41,27 +41,29 @@ postcssOptions: {
 Install the autoprefixer plugin:
 
 ```shell
-npm i --save-dev autoprefixer-core
+npm i --save-dev autoprefixer
 ```
 
-Specify some plugins in your Brocfile.js:
+Specify some plugins in your `ember-cli-build.js` (or `Brocfile.js`):
 
 ```javascript
+/* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 
-var app = new EmberApp({
-  postcssOptions: {
-    plugins: [
-      {
-        module: autoprefixer,
-        options: {
-          browsers: ['last 2 version']
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
+    postcssOptions: {
+      plugins: [
+        {
+          module: autoprefixer,
+          options: {
+            browsers: ['last 2 version']
+          }
         }
-      }
-    ]
-  }
-});
-
-module.exports = app.toTree();
+      ]
+    }
+  });
+  return app.toTree();
+};
 ```
