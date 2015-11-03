@@ -13,7 +13,9 @@
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "merge": "^1.2.0",
     "broccoli-postcss": "^2.0.0",
+    "broccoli-merge-trees": "^0.2.1",
     "ember-cli-version-checker": "^1.0.2"
   },
   "keywords": [
