@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-postcss",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Use postcss to process your css with a large selection of JavaScript plug-ins.",
   "repository": {
     "type": "git",
