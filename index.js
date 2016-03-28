@@ -12,7 +12,7 @@ module.exports = {
       this.app = app = app.app
     }
 
-    this._super.included.apply(this. arguments)
+    this._super.included.apply(this, arguments)
 
     // Initialize options if none were passed
     this.options = defaults(this.app.options.postcssOptions || {}, {
