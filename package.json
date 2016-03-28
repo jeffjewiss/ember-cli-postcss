@@ -13,10 +13,8 @@
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "merge": "^1.2.0",
-    "broccoli-postcss": "^2.0.0",
-    "broccoli-merge-trees": "^1.0.0",
-    "ember-cli-version-checker": "^1.0.2"
+    "lodash": "^4.0.0",
+    "broccoli-postcss": "^3.0.0"
   },
   "keywords": [
     "ember-addon",
@@ -28,5 +26,8 @@
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "devDependencies": {
+    "standard": "6.0.8"
   }
 }

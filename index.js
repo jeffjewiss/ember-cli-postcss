@@ -1,59 +1,35 @@
-var PostcssCompiler = require('broccoli-postcss');
-var path = require('path');
-var merge = require('merge');
-var mergeTrees = require('broccoli-merge-trees');
-var checker = require('ember-cli-version-checker');
-
-function PostcssPlugin(optionsFn) {
-  this.name = 'ember-cli-postcss';
-  this.optionsFn = optionsFn;
-}
-
-PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
-  var inputTrees = [tree];
-  var options = merge({}, this.optionsFn, inputOptions);
-
-  if (options.includePaths) {
-    inputTrees = inputTrees.concat(this.options.includePaths);
-  }
-
-  var plugins = options.plugins;
-  var map = options.map;
-
-  var ext = options.extension || 'css';
-  var paths = options.outputPaths;
-  var trees = Object.keys(paths).map(function(file) {
-    var input = path.join(inputPath, file + '.' + ext);
-    var output = paths[file];
-    return new PostcssCompiler(inputTrees, input, output, plugins, map);
-  });
-
-  return mergeTrees(trees);
-};
+var postcssCompiler = require('broccoli-postcss')
+var defaults = require('lodash/defaults')
 
 module.exports = {
-  name: 'Ember CLI Postcss',
+  name: 'ember-cli-postcss',
 
-  shouldSetupRegistryInIncluded: function() {
-    return !checker.isAbove(this, '0.2.0');
+  included: function included (app, parentAddon) {
+    this.app = app
+
+    // Support nesting this addon
+    if (typeof app.import !== 'function' && app.app) {
+      this.app = app = app.app
+    }
+
+    this._super.included.apply(this. arguments)
+
+    // Initialize options if none were passed
+    this.options = defaults(this.app.options.postcssOptions || {}, {
+      enabled: true,
+      map: {},
+      plugins: []
+    })
+
+    this.enabled = this.options.enabled
+    delete this.options.enabled
   },
 
-  included: function included(app) {
-    this.app = app;
-    // Initialize options if none were passed
-    var options = app.options.postcssOptions || {};
-
-    // Set defaults if none were passed
-    options.map = options.map || {};
-    options.plugins = options.plugins || [];
-    options.inputFile = options.inputFile || 'app.css';
-    options.outputFile = options.outputFile || this.project.name() + '.css';
-
-    // Add to registry and pass options
-    app.registry.add('css', new PostcssPlugin(options));
-
-    if (this.shouldSetupRegistryInIncluded()) {
-      this.setupPreprocessorRegistry('parent', app.registry);
+  postprocessTree: function (type, tree) {
+    if ((type === 'all' || type === 'styles') && this.enabled) {
+      tree = postcssCompiler(tree, this.options)
     }
+
+    return tree
   }
-};
+}
