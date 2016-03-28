@@ -53,6 +53,7 @@
     "ember-try": "^0.1.2",
     "loader.js": "^4.0.0",
     "postcss-color-gray": "3.0.0",
+    "postcss-color-rebeccapurple": "2.0.0",
     "standard": "6.0.8"
   }
 }

@@ -16,18 +16,32 @@ module.exports = {
 
     // Initialize options if none were passed
     this.options = defaults(this.app.options.postcssOptions || {}, {
-      enabled: true,
-      map: {},
-      plugins: []
+      compile: {
+        enabled: true,
+        map: {},
+        plugins: []
+      },
+      postcompile: {
+        enabled: false,
+        map: {},
+        plugins: []
+      }
     })
+  },
 
-    this.enabled = this.options.enabled
-    delete this.options.enabled
+  treeForStyles: function (tree) {
+    if (this.options.compile.enabled && tree) {
+      delete this.options.compile.enabled
+      tree = postcssCompiler(tree, this.options.compile)
+    }
+
+    return tree
   },
 
   postprocessTree: function (type, tree) {
-    if ((type === 'all' || type === 'styles') && this.enabled) {
-      tree = postcssCompiler(tree, this.options)
+    if (this.options.postcompile.enabled && (type === 'all' || type === 'styles')) {
+      delete this.options.postcompile.enabled
+      tree = postcssCompiler(tree, this.options.postcompile)
     }
 
     return tree

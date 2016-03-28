@@ -21,13 +21,14 @@ module('Acceptance: Application (Chrome Only)', {
 /**
   Execute this test in Chrome or PhantomJS for correct results
 */
-test('Verify correct color transformation for gray() from postcss', function(assert) {
-  assert.expect(3);
+test('Verify postcss has run', function(assert) {
+  assert.expect(4);
 
   visit('/');
   andThen(function() {
     assert.equal(currentPath(), 'index', "On the index page");
     assert.equal(find('#title').length, 1, "Page contains a header title");
-    assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)');
+    assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)', 'postcss-color-gray has run');
+    assert.equal(getCssProperty('paragraph', 'color'), 'rgb(102, 51, 153)', 'postcss-rebeccapurple has run');
   });
 });

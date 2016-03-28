@@ -3,10 +3,17 @@ var EmberAddon = require('ember-cli/lib/broccoli/ember-addon')
 module.exports = function (defaults) {
   var app = new EmberAddon(defaults, {
     postcssOptions: {
-      enabled: true,
-      plugins: [
-        { module: require('postcss-color-gray') }
-      ]
+      compile: {
+        plugins: [
+          { module: require('postcss-color-gray') }
+        ]
+      },
+      postcompile: {
+        enabled: true,
+        plugins: [
+          { module: require('postcss-color-rebeccapurple') }
+        ]
+      }
     }
   })
 
