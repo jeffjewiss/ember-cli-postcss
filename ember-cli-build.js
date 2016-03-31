@@ -8,7 +8,7 @@ module.exports = function (defaults) {
           { module: require('postcss-color-gray') }
         ]
       },
-      postcompile: {
+      filter: {
         enabled: true,
         plugins: [
           { module: require('postcss-color-rebeccapurple') }
