@@ -1,8 +1,9 @@
 # ember-cli-postcss
 
-[![npm version](https://badge.fury.io/js/ember-cli-postcss.svg)](http://badge.fury.io/js/ember-cli-postcss) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss) [![Code Climate](https://codeclimate.com/github/jeffjewiss/ember-cli-postcss/badges/gpa.svg)](https://codeclimate.com/github/jeffjewiss/ember-cli-postcss)
+[![npm version](https://badge.fury.io/js/ember-cli-postcss.svg)](http://badge.fury.io/js/ember-cli-postcss)
+[![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss)
 
-Use [postcss](https://github.com/postcss/postcss) to process your `css` with a large selection of JavaScript plug-ins.
+Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](https://postcss.parts).
 
 ## Installation
 
@@ -12,27 +13,69 @@ npm install --save-dev ember-cli-postcss
 
 ## Usage
 
-The addon is still a little rough around the edges, but it will look for either `app.css` or `<project-name>.css` in your styles directory. Postcss requires at least one plug-in to actually do any processing, and so `broccoli-postcss` will throw an error if at least one is not provided.
+The add-on can be used in two ways:
+
+* on individual files, referred to as “compile”
+* on all CSS files, referred to as “filter”
+
+*Note: it’s possible to use both compile and filter.*
+
+#### Compile
+
+This step will look for either `app.css` or `<project-name>.css` in your styles directory. Additional files to be processed can be defined in the output paths configuration object for your application:
+
+```javascript
+var app = new EmberApp(defaults, {
+  outputPaths: {
+    app: {
+      html: 'index.html',
+      css: {
+        'app': '/assets/app.css',
+        'print': '/assets/print.css'
+      }
+    }
+  }
+}
+```
+
+#### Filter
+
+This step will run at the end of the build process on all CSS files, including the merged `vendor.css` file and any CSS imported into the Broccoli tree by add-ons.
+
 
 ### Configuring Plug-ins
 
 There are two steps to setting up [postcss](https://github.com/postcss/postcss) with `ember-cli-postcss`:
 
 1. install and require the node modules for any plug-ins
-2. provide the node module and plug-in options as a `postcssOptions` object in the Brocfile
+2. provide the node module and plug-in options as a `postcssOptions` object in `ember-cli-build.js`
 
-The `postcssOptions` object should have a property `plugins`, which is an array of objects that contain a `module` property and an `options` property:
+The `postcssOptions` object should have a “compile” and “filter” (optional) property, which will have the properties `enabled` and `plugins`, which is an array of objects that contain a `module` property and an `options` property:
 
 ```javascript
 postcssOptions: {
-  plugins: [
-    {
-      module: <module>,
-      options: {
-        ...
+  enabled: true, // defaults to true
+  compile: {
+    plugins: [
+      {
+        module: <module>,
+        options: {
+          ...
+        }
       }
-    }
-  ]
+    ]
+  },
+  filter: {
+    enabled: true, // defaults to false
+    plugins: [
+      {
+        module: <module>,
+        options: {
+          ...
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -54,14 +97,20 @@ var autoprefixer = require('autoprefixer');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     postcssOptions: {
-      plugins: [
-        {
-          module: autoprefixer,
-          options: {
-            browsers: ['last 2 version']
+      compile: {
+        enabled: false
+      },
+      filter: {
+        enbaled: true,
+        plugins: [
+          {
+            module: autoprefixer,
+            options: {
+              browsers: ['last 2 version']
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   });
   return app.toTree();
