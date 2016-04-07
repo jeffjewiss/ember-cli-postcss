@@ -75,7 +75,6 @@ module.exports = {
 
   postprocessTree: function (type, tree) {
     if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
-      delete this.options.filter.enabled
       tree = postcssFilter(tree, this.options.filter)
     }
 
