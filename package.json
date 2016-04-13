@@ -20,7 +20,7 @@
   "dependencies": {
     "broccoli-merge-trees": "^1.0.0",
     "broccoli-postcss": "^3.0.0",
-    "broccoli-postcss-single": "jeffjewiss/broccoli-postcss-single",
+    "broccoli-postcss-single": "^1.0.0",
     "ember-cli-dependency-checker": "^1.2.0",
     "merge": "^1.2.0"
   },
