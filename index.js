@@ -4,6 +4,7 @@ var mergeTrees = require('broccoli-merge-trees')
 var checker = require('ember-cli-version-checker')
 var postcssFilter = require('broccoli-postcss')
 var PostcssCompiler = require('broccoli-postcss-single')
+var EngineAddon = require('ember-engines/lib/engine-addon')
 
 function PostcssPlugin (optionsFn) {
   this.name = 'ember-cli-postcss'
@@ -20,19 +21,20 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
 
   var plugins = options.plugins
   var map = options.map
+	var stats = options.stats
 
   var ext = options.extension || 'css'
   var paths = options.outputPaths
   var trees = Object.keys(paths).map(function (file) {
     var input = path.join(inputPath, file + '.' + ext)
     var output = paths[file]
-    return new PostcssCompiler(inputTrees, input, output, plugins, map)
+    return new PostcssCompiler(inputTrees, input, output, plugins, map, stats)
   })
 
   return mergeTrees(trees)
 }
 
-module.exports = {
+module.exports = EngineAddon.extend({
   name: 'ember-cli-postcss',
 
   shouldSetupRegistryInIncluded: function () {
@@ -54,6 +56,7 @@ module.exports = {
       compile: {
         enabled: true,
         map: {},
+        stats: {},
         plugins: [],
         inputFile: 'app.css',
         outputFile: this.project.name() + '.css'
@@ -80,4 +83,4 @@ module.exports = {
 
     return tree
   }
-}
+})
