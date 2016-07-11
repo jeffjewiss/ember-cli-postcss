@@ -12,7 +12,14 @@ function PostcssPlugin (optionsFn) {
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
   var inputTrees = [tree]
-  var options = merge.recursive({}, this.optionsFn, inputOptions)
+  var defaultOptions = {
+    enabled: true
+  }
+  var options = merge.recursive(defaultOptions, this.optionsFn, inputOptions)
+
+  if (!options.enabled) {
+    return tree
+  }
 
   if (options.includePaths) {
     inputTrees = inputTrees.concat(this.options.includePaths)
