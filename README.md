@@ -87,7 +87,7 @@ Install the autoprefixer plugin:
 npm i --save-dev autoprefixer
 ```
 
-Specify some plugins in your `ember-cli-build.js` (or `Brocfile.js`):
+Specify some plugins in your `ember-cli-build.js`:
 
 ```javascript
 /* global require, module */
