@@ -22,7 +22,7 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
   }
 
   if (options.includePaths) {
-    inputTrees = inputTrees.concat(this.options.includePaths)
+    inputTrees = inputTrees.concat(options.includePaths)
   }
 
   var plugins = options.plugins
