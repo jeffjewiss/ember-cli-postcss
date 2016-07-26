@@ -23,7 +23,7 @@ module('Acceptance: Application (Chrome Only)', {
 /**
   Execute this test in Chrome or PhantomJS for correct results
 */
-test('Verify postcss has run', function(assert) {
+test('Verify postcss has run', (assert) => {
   assert.expect(4);
 
   visit('/');
@@ -32,5 +32,15 @@ test('Verify postcss has run', function(assert) {
     assert.equal(find('#title').length, 1, 'Page contains a header title');
     assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)', 'postcss-color-gray has run');
     assert.equal(getCssProperty('paragraph', 'color'), 'rgb(102, 51, 153)', 'postcss-rebeccapurple has run');
+  });
+});
+
+test('Verify additional files can be compiled', (assert) => {
+  assert.expect(2);
+
+  visit('/');
+  andThen(function() {
+    assert.equal(currentPath(), 'index', "On the index page");
+    assert.equal(getCssProperty('paragraph', 'margin-bottom'), '16px', 'secondary.css has been processed');
   });
 });
