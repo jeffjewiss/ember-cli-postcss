@@ -40,7 +40,7 @@ test('Verify additional files can be compiled', (assert) => {
 
   visit('/');
   andThen(function() {
-    assert.equal(currentPath(), 'index', "On the index page");
+    assert.equal(currentPath(), 'index', 'On the index page');
     assert.equal(getCssProperty('paragraph', 'margin-bottom'), '16px', 'secondary.css has been processed');
   });
 });
