@@ -2,19 +2,21 @@ import Ember from 'ember';
 import { module, test } from 'qunit';
 import startApp from '../helpers/start-app';
 
-var application;
+const { run } = Ember;
+
+let application;
 
 function getCssProperty(element, property) {
-  var elem = document.getElementById(element);
+  let elem = document.getElementById(element);
   return window.getComputedStyle(elem, null).getPropertyValue(property);
 }
 
 module('Acceptance: Application (Chrome Only)', {
-  beforeEach: function() {
+  beforeEach() {
     application = startApp();
   },
-  afterEach: function() {
-    Ember.run(application, 'destroy');
+  afterEach() {
+    run(application, 'destroy');
   }
 });
 
@@ -26,8 +28,8 @@ test('Verify postcss has run', function(assert) {
 
   visit('/');
   andThen(function() {
-    assert.equal(currentPath(), 'index', "On the index page");
-    assert.equal(find('#title').length, 1, "Page contains a header title");
+    assert.equal(currentPath(), 'index', 'On the index page');
+    assert.equal(find('#title').length, 1, 'Page contains a header title');
     assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)', 'postcss-color-gray has run');
     assert.equal(getCssProperty('paragraph', 'color'), 'rgb(102, 51, 153)', 'postcss-rebeccapurple has run');
   });
