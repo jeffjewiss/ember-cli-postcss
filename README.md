@@ -1,4 +1,5 @@
-# ember-cli-postcss
+ember-cli-postcss
+=================
 
 [![Build Status](https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-cli-postcss)
 [![npm version](https://badge.fury.io/js/ember-cli-postcss.svg)](http://badge.fury.io/js/ember-cli-postcss)
@@ -6,13 +7,15 @@
 
 Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](https://postcss.parts).
 
-## Installation
+Installation
+------------
 
 ```shell
 npm install --save-dev ember-cli-postcss
 ```
 
-## Usage
+Usage
+-----
 
 The add-on can be used in two ways:
 
@@ -51,12 +54,12 @@ There are two steps to setting up [postcss](https://github.com/postcss/postcss) 
 1. install and require the node modules for any plug-ins
 2. provide the node module and plug-in options as a `postcssOptions` object in `ember-cli-build.js`
 
-The `postcssOptions` object should have a “compile” and “filter” (optional) property, which will have the properties `enabled` and `plugins`, which is an array of objects that contain a `module` property and an `options` property:
+The `postcssOptions` object should have a “compile” and/or “filter” property, which will have the properties `enabled` and `plugins`, which is an array of objects that contain a `module` property and an `options` property:
 
 ```javascript
 postcssOptions: {
-  enabled: true, // defaults to true
   compile: {
+    enabled: true, // defaults to true
     plugins: [
       {
         module: <module>,
@@ -80,29 +83,29 @@ postcssOptions: {
 }
 ```
 
-## Example
+Example
+-------
 
-Install the autoprefixer plugin:
+Install the autoprefixer plug-in:
 
 ```shell
 npm i --save-dev autoprefixer
 ```
 
-Specify some plugins in your `ember-cli-build.js`:
+Specify some plug-ins in your `ember-cli-build.js`:
 
 ```javascript
-/* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var autoprefixer = require('autoprefixer');
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
         enabled: false
       },
       filter: {
-        enbaled: true,
+        enabled: true,
         plugins: [
           {
             module: autoprefixer,
