@@ -11,7 +11,7 @@ Installation
 ------------
 
 ```shell
-npm install --save-dev ember-cli-postcss
+ember install ember-cli-postcss
 ```
 
 Usage
