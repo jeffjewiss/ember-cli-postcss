@@ -5,7 +5,7 @@ ember-cli-postcss
 [![npm version](https://badge.fury.io/js/ember-cli-postcss.svg)](http://badge.fury.io/js/ember-cli-postcss)
 [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss)
 
-Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](https://postcss.parts).
+Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](http://postcss.parts).
 
 Installation
 ------------
