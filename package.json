@@ -9,8 +9,12 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:testall"
+    "test": "ember try:each"
   },
+  "files": [
+    "config/environment.js",
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/jeffjewiss/ember-cli-postcss"
@@ -52,6 +56,7 @@
     "ember-cli-qunit": "^2.1.0",
     "ember-cli-release": "0.2.9",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-disable-proxy-controllers": "^1.0.1",
