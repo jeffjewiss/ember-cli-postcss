@@ -42,7 +42,8 @@
     "postcss"
   ],
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "before": "ember-cli-sri"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
