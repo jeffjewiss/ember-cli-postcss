@@ -43,7 +43,10 @@
   ],
   "ember-addon": {
     "configPath": "tests/dummy/config",
-    "before": "ember-cli-sri"
+    "before": [
+      "ember-cli-sri",
+      "broccoli-asset-rev"
+    ]
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
