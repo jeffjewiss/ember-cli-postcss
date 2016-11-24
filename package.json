@@ -71,6 +71,6 @@
     "loader.js": "^4.0.1",
     "postcss-color-gray": "3.0.0",
     "postcss-color-rebeccapurple": "2.0.0",
-    "standard": "8.5.0"
+    "standard": "8.6.0"
   }
 }
