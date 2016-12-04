@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
-    "ember-cli": "2.9.1",
+    "ember-cli": "2.10.0",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.1.5",
     "ember-cli-htmlbars": "^1.0.1",
@@ -69,8 +69,8 @@
     "ember-resolver": "^2.0.3",
     "ember-suave": "4.0.1",
     "loader.js": "^4.0.1",
-    "postcss-color-gray": "3.0.0",
-    "postcss-color-rebeccapurple": "2.0.0",
+    "postcss-color-gray": "3.0.1",
+    "postcss-color-rebeccapurple": "2.0.1",
     "standard": "8.6.0"
   }
 }
