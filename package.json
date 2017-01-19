@@ -48,17 +48,22 @@
       "broccoli-asset-rev"
     ]
   },
+  "standard": {
+    "ignore": [
+      "testem.js"
+    ]
+  },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
-    "ember-cli": "2.10.0",
+    "ember-cli": "^2.10.0",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.2.1",
+    "ember-cli-eslint": "^3.0.2",
     "ember-cli-htmlbars": "^1.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
     "ember-cli-inject-live-reload": "^1.4.0",
-    "ember-cli-jshint": "2.0.1",
     "ember-cli-qunit": "^3.0.0",
-    "ember-cli-release": "0.2.9",
+    "ember-cli-release": "^0.2.9",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^1.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -67,11 +72,14 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.2",
     "ember-resolver": "^2.0.3",
-    "ember-suave": "4.0.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-ember-suave": "1.0.0",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
     "loader.js": "^4.1.0",
     "minimatch": "^3.0.0",
-    "postcss-color-gray": "3.0.1",
-    "postcss-color-rebeccapurple": "2.0.1",
-    "standard": "8.6.0"
+    "postcss-color-gray": "^3.0.1",
+    "postcss-color-rebeccapurple": "^2.0.1",
+    "standard": "^8.6.0"
   }
 }

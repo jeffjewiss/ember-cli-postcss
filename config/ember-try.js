@@ -1,16 +1,16 @@
-/*jshint node:true*/
-function scenario(ver) {
+/* jshint node:true */
+function scenario (ver) {
   return {
-      name: 'ember-' + ver,
-      bower: {
-        dependencies: {
-          'ember': '~' + ver + '.0'
-        },
-        resolutions: {
-          'ember': '~' + ver + '.0'
-        }
+    name: 'ember-' + ver,
+    bower: {
+      dependencies: {
+        'ember': '~' + ver + '.0'
+      },
+      resolutions: {
+        'ember': '~' + ver + '.0'
       }
-    };
+    }
+  }
 }
 
 module.exports = {
@@ -52,4 +52,4 @@ module.exports = {
       }
     }
   ]
-};
+}

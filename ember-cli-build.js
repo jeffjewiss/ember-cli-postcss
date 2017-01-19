@@ -1,8 +1,7 @@
-/*jshint node:true*/
 /* global require, module */
-var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+var EmberAddon = require('ember-cli/lib/broccoli/ember-addon')
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   var app = new EmberAddon(defaults, {
     outputPaths: {
       app: {
@@ -34,5 +33,5 @@ module.exports = function(defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree();
-};
+  return app.toTree()
+}
