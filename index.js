@@ -47,6 +47,7 @@ module.exports = {
   },
 
   included: function included (app, parentAddon) {
+    var env = process.env.EMBER_ENV
     this.app = app
 
     // Support nesting this addon
@@ -60,14 +61,14 @@ module.exports = {
     this.options = merge.recursive({}, {
       compile: {
         enabled: true,
-        map: {},
+        map: env !== 'development' ? false : {},
         plugins: [],
         inputFile: 'app.css',
         outputFile: this.project.name() + '.css'
       },
       filter: {
         enabled: false,
-        map: {},
+        map: env !== 'development' ? false : {},
         plugins: []
       }
     }, this.app.options.postcssOptions)
