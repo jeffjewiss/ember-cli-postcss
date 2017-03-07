@@ -1,9 +1,9 @@
-var path = require('path')
-var merge = require('merge')
-var mergeTrees = require('broccoli-merge-trees')
-var checker = require('ember-cli-version-checker')
-var postcssFilter = require('broccoli-postcss')
-var PostcssCompiler = require('broccoli-postcss-single')
+const path = require('path')
+const merge = require('merge')
+const mergeTrees = require('broccoli-merge-trees')
+const checker = require('ember-cli-version-checker')
+const postcssFilter = require('broccoli-postcss')
+const PostcssCompiler = require('broccoli-postcss-single')
 
 function PostcssPlugin (optionsFn) {
   this.name = 'ember-cli-postcss'
@@ -11,11 +11,11 @@ function PostcssPlugin (optionsFn) {
 }
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
-  var inputTrees = [tree]
-  var defaultOptions = {
+  let inputTrees = [tree]
+  let defaultOptions = {
     enabled: true
   }
-  var options = merge.recursive(defaultOptions, this.optionsFn, inputOptions)
+  let options = merge.recursive(defaultOptions, this.optionsFn, inputOptions)
 
   if (!options.enabled) {
     return tree
@@ -25,14 +25,12 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
     inputTrees = inputTrees.concat(options.includePaths)
   }
 
-  var plugins = options.plugins
-  var map = options.map
-
-  var ext = options.extension || 'css'
-  var paths = options.outputPaths
-  var trees = Object.keys(paths).map(function (file) {
-    var input = path.join(inputPath, file + '.' + ext)
-    var output = paths[file]
+  let { plugins, map } = options
+  let ext = options.extension || 'css'
+  let paths = options.outputPaths
+  let trees = Object.keys(paths).map(function (file) {
+    let input = path.join(inputPath, `${file}.${ext}`)
+    let output = paths[file]
     return new PostcssCompiler(inputTrees, input, output, plugins, map)
   })
 
@@ -42,12 +40,12 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
 module.exports = {
   name: 'ember-cli-postcss',
 
-  shouldSetupRegistryInIncluded: function () {
+  shouldSetupRegistryInIncluded () {
     return !checker.isAbove(this, '0.2.0')
   },
 
   included: function included (app, parentAddon) {
-    var env = process.env.EMBER_ENV
+    let env = process.env.EMBER_ENV
     this.app = app
 
     // Support nesting this addon
@@ -64,7 +62,7 @@ module.exports = {
         map: env !== 'development' ? false : {},
         plugins: [],
         inputFile: 'app.css',
-        outputFile: this.project.name() + '.css'
+        outputFile: `${this.project.name()}.css`
       },
       filter: {
         enabled: false,
@@ -81,7 +79,7 @@ module.exports = {
     }
   },
 
-  postprocessTree: function (type, tree) {
+  postprocessTree (type, tree) {
     if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
       tree = postcssFilter(tree, this.options.filter)
     }
