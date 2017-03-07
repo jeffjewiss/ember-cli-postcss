@@ -9,7 +9,8 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each"
+    "test": "npm run lint && ember try:each",
+    "lint": "eslint *.js"
   },
   "files": [
     "config/environment.js",
@@ -72,6 +73,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.2",
     "ember-resolver": "^2.0.3",
+    "eslint": "^3.17.1",
     "eslint-config-standard": "^7.0.0",
     "eslint-plugin-ember-suave": "1.0.0",
     "eslint-plugin-promise": "^3.4.0",

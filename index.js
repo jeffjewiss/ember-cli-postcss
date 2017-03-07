@@ -27,7 +27,8 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
     inputTrees = inputTrees.concat(options.includePaths)
   }
 
-  let { plugins, map } = options
+  let plugins = options.plugins // eslint-disable-line
+  let map = options.map // eslint-disable-line
   let ext = options.extension || 'css'
   let paths = options.outputPaths
   let trees = Object.keys(paths).map(function (file) {
