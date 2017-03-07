@@ -1,5 +1,20 @@
 # master
 
+# 3.1.2
+
+* default to only creating sourcemaps in the development environment
+
+# 3.1.1
+
+* update code styles for tests
+* add yarn lockfile
+
+# 3.1.0
+
+* switch to using eslint instead of jshint
+* update code styles
+* fix option reference
+
 # 3.0.0
 
 * splits plugin into two modes: compile and filter
