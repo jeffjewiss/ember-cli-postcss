@@ -10,7 +10,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "npm run lint && ember try:each",
-    "lint": "eslint *.js"
+    "lint": "eslint config *.js"
   },
   "files": [
     "config/environment.js",
