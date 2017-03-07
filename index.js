@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 const merge = require('merge')
 const mergeTrees = require('broccoli-merge-trees')
