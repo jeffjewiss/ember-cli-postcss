@@ -46,6 +46,7 @@ var app = new EmberApp(defaults, {
 
 This step will run at the end of the build process on all CSS files, including the merged `vendor.css` file and any CSS imported into the Broccoli tree by add-ons.
 
+Files can be white-listed and/or black-listed by using the respective include and exclude options. Each accepts an array of file globs, which are then passed on to Broccoli Funnel. An example can be seen in the sample configuration below.
 
 ### Configuring Plug-ins
 
@@ -71,6 +72,9 @@ postcssOptions: {
   },
   filter: {
     enabled: true, // defaults to false
+    map: false, // defaults to inline, false in production
+    include: ['styles/*.css'],
+    exclude: ['vendor/bootstrap/**/*']
     plugins: [
       {
         module: <module>,
