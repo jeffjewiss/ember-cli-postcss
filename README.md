@@ -74,7 +74,7 @@ postcssOptions: {
     enabled: true, // defaults to false
     map: false, // defaults to inline, false in production
     include: ['styles/*.css'],
-    exclude: ['vendor/bootstrap/**/*']
+    exclude: ['vendor/bootstrap/**/*'],
     plugins: [
       {
         module: <module>,
