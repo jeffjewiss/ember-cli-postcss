@@ -1,15 +1,15 @@
-'use strict'
+/* eslint-env node */
+'use strict';
 
 const path = require('path')
 const merge = require('merge')
 const mergeTrees = require('broccoli-merge-trees')
-const checker = require('ember-cli-version-checker')
 const postcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
 
-function PostcssPlugin (optionsFn) {
-  this.name = 'ember-cli-postcss'
-  this.optionsFn = optionsFn
+function PostcssPlugin (addon) {
+  this.name = 'ember-cli-postcss';
+  this.addon = addon;
 }
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
@@ -17,7 +17,7 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
   let defaultOptions = {
     enabled: true
   }
-  let options = merge.recursive(defaultOptions, this.optionsFn, inputOptions)
+  let options = merge.recursive(defaultOptions, this.addon.options.compile, inputOptions)
 
   if (!options.enabled) {
     return tree
@@ -43,20 +43,10 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
 module.exports = {
   name: 'ember-cli-postcss',
 
-  shouldSetupRegistryInIncluded () {
-    return !checker.isAbove(this, '0.2.0')
-  },
-
-  included: function included (app, parentAddon) {
-    let env = process.env.EMBER_ENV
-    this.app = app
-
-    // Support nesting this addon
-    if (typeof app.import !== 'function' && app.app) {
-      this.app = app = app.app
-    }
-
+  included: function included (app) {
     this._super.included.apply(this, arguments)
+
+    let env = process.env.EMBER_ENV
 
     // Initialize options if none were passed
     this.options = merge.recursive({}, {
@@ -72,21 +62,22 @@ module.exports = {
         map: env !== 'development' ? false : {},
         plugins: []
       }
-    }, this.app.options.postcssOptions)
-
-    // Add to registry and pass options
-    app.registry.add('css', new PostcssPlugin(this.options.compile))
-
-    if (this.shouldSetupRegistryInIncluded()) {
-      this.setupPreprocessorRegistry('parent', app.registry)
-    }
+    }, this._getAddonOptions(app).postcssOptions)
   },
 
-  postprocessTree (type, tree) {
+  _getAddonOptions: function(app) {
+    return (this.parent && this.parent.options) || (app && app.options) || {};
+  },
+
+  postprocessTree: function(type, tree) {
     if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
       tree = postcssFilter(tree, this.options.filter)
     }
-
     return tree
+  },
+
+  setupPreprocessorRegistry(type, registry) {
+    let addon = this;
+    registry.add('css', new PostcssPlugin(addon))
   }
 }
