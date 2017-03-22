@@ -1,5 +1,5 @@
 /* eslint-env node */
-'use strict';
+'use strict'
 
 const path = require('path')
 const merge = require('merge')
@@ -8,8 +8,8 @@ const postcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
 
 function PostcssPlugin (addon) {
-  this.name = 'ember-cli-postcss';
-  this.addon = addon;
+  this.name = 'ember-cli-postcss'
+  this.addon = addon
 }
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
@@ -65,19 +65,19 @@ module.exports = {
     }, this._getAddonOptions(app).postcssOptions)
   },
 
-  _getAddonOptions: function(app) {
-    return (this.parent && this.parent.options) || (app && app.options) || {};
+  _getAddonOptions (app) {
+    return (this.parent && this.parent.options) || (app && app.options) || {}
   },
 
-  postprocessTree: function(type, tree) {
+  postprocessTree (type, tree) {
     if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
       tree = postcssFilter(tree, this.options.filter)
     }
     return tree
   },
 
-  setupPreprocessorRegistry(type, registry) {
-    let addon = this;
+  setupPreprocessorRegistry (type, registry) {
+    let addon = this
     registry.add('css', new PostcssPlugin(addon))
   }
 }
