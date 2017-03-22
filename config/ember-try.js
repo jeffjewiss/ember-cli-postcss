@@ -1,4 +1,3 @@
-/* jshint node:true */
 function scenario (ver) {
   return {
     name: `ember-${ver}`,
