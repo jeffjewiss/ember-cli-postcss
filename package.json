@@ -73,7 +73,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^0.6.2",
     "ember-resolver": "^4.0.0",
-    "eslint-config-standard": "^7.0.0",
+    "eslint-config-standard": "^8.0.0",
     "eslint-plugin-ember-suave": "^1.0.0",
     "eslint-plugin-promise": "^3.4.0",
     "eslint-plugin-standard": "^2.0.1",
