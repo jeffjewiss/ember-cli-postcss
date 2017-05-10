@@ -71,7 +71,7 @@ module.exports = {
 
   postprocessTree (type, tree) {
     if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
-      tree = postcssFilter(tree, this.options.filter)
+      tree = mergeTrees([tree, postcssFilter(tree, this.options.filter)], { overwrite: true })
     }
     return tree
   },
