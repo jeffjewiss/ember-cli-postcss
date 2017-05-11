@@ -60,7 +60,7 @@
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.1.0",
     "ember-cli-eslint": "^3.01.0",
-    "ember-cli-htmlbars": "^1.0.1",
+    "ember-cli-htmlbars": "^2.0.0",
     "ember-cli-htmlbars-inline-precompile": "^0.4.0",
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-qunit": "^4.0.0",
