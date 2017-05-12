@@ -83,6 +83,6 @@
     "loader.js": "^4.1.0",
     "minimatch": "^3.0.0",
     "postcss-color-gray": "^3.0.1",
-    "postcss-color-rebeccapurple": "^2.0.1"
+    "postcss-color-rebeccapurple": "^3.0.0"
   }
 }
