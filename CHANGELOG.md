@@ -1,5 +1,14 @@
 # master
 
+# 3.3.0
+
+* fix include/exclude from removing files by overwriting with broccoli merge tree
+* update ember cli and testing deps
+
+# 3.2.0
+
+* adds include/exclude option for filter
+
 # 3.1.2
 
 * default to only creating sourcemaps in the development environment
