@@ -1,5 +1,9 @@
 # master
 
+# 3.4.0
+
+* use Postcss 6 via updating broccoli plugins
+
 # 3.3.0
 
 * fix include/exclude from removing files by overwriting with broccoli merge tree
