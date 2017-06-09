@@ -57,6 +57,10 @@ There are two steps to setting up [postcss](https://github.com/postcss/postcss) 
 
 The `postcssOptions` object should have a “compile” and/or “filter” property, which will have the properties `enabled` and `plugins`, which is an array of objects that contain a `module` property and an `options` property:
 
+#### Browser Targets
+
+Some postcss plug-ins, like autoprefixer, allow you to configure which browsers to target for transpilation. When using Ember CLI >= 2.13.0, the browser targets configuration (`project.target.browsers`) will be added to each plug-in’s options (as `options.browsers`) to conform to the expected options object, which can be overwritten on a plug-in by plug-in basis.
+
 ```javascript
 postcssOptions: {
   compile: {

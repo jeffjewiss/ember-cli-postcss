@@ -14,9 +14,7 @@ function PostcssPlugin (addon) {
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
   let inputTrees = [tree]
-  let defaultOptions = {
-    enabled: true
-  }
+  let defaultOptions = { enabled: true }
   let options = merge.recursive(defaultOptions, this.addon.options.compile, inputOptions)
 
   if (!options.enabled) {
@@ -27,14 +25,12 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
     inputTrees = inputTrees.concat(options.includePaths)
   }
 
-  let plugins = options.plugins // eslint-disable-line
-  let map = options.map // eslint-disable-line
   let ext = options.extension || 'css'
   let paths = options.outputPaths
-  let trees = Object.keys(paths).map(function (file) {
+  let trees = Object.keys(paths).map((file) => {
     let input = path.join(inputPath, `${file}.${ext}`)
     let output = paths[file]
-    return new PostcssCompiler(inputTrees, input, output, plugins, map)
+    return new PostcssCompiler(inputTrees, input, output, options)
   })
 
   return mergeTrees(trees)
@@ -43,15 +39,17 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
 module.exports = {
   name: 'ember-cli-postcss',
 
-  included: function included (app) {
+  included (app) {
     this._super.included.apply(this, arguments)
 
     let env = process.env.EMBER_ENV
+    let browsers = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
     this.options = merge.recursive({}, {
       compile: {
         enabled: true,
+        browsers,
         map: env !== 'development' ? false : {},
         plugins: [],
         inputFile: 'app.css',
@@ -59,6 +57,7 @@ module.exports = {
       },
       filter: {
         enabled: false,
+        browsers,
         map: env !== 'development' ? false : {},
         plugins: []
       }
