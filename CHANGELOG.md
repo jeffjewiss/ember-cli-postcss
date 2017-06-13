@@ -1,5 +1,9 @@
 # master
 
+# 3.4.1
+
+* support `config/targets.js` and overriding `browsers` options
+
 # 3.4.0
 
 * use Postcss 6 via updating broccoli plugins
