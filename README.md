@@ -29,7 +29,7 @@ The add-on can be used in two ways:
 This step will look for either `app.css` or `<project-name>.css` in your styles directory. Additional files to be processed can be defined in the output paths configuration object for your application:
 
 ```javascript
-var app = new EmberApp(defaults, {
+const app = new EmberApp(defaults, {
   outputPaths: {
     app: {
       html: 'index.html',
@@ -59,12 +59,13 @@ The `postcssOptions` object should have a “compile” and/or “filter” prop
 
 #### Browser Targets
 
-Some postcss plug-ins, like autoprefixer, allow you to configure which browsers to target for transpilation. When using Ember CLI >= 2.13.0, the browser targets configuration (`project.target.browsers`) will be added to each plug-in’s options (as `options.browsers`) to conform to the expected options object, which can be overwritten on a plug-in by plug-in basis.
+Some postcss plug-ins, like autoprefixer, allow you to configure which browsers to target for transpilation. When using Ember CLI >= 2.13.0, the browser targets configuration found in the file `config/targets.js` will be added to each plug-in’s options (as `options.browsers`). This browser list can be overwritten on a plug-in by plug-in basis. You can learn more about the targets feature on the [Ember.js blog](https://emberjs.com/blog/2017/04/29/ember-2-13-released.html#toc_targets).
 
 ```javascript
 postcssOptions: {
   compile: {
     enabled: true, // defaults to true
+    browsers: ['last 3 versions'], // this will override config found in config/targets.js
     plugins: [
       {
         module: <module>,
@@ -77,6 +78,7 @@ postcssOptions: {
   filter: {
     enabled: true, // defaults to false
     map: false, // defaults to inline, false in production
+    browsers: ['last 3 versions'], // this will override config found in config/targets.js
     include: ['styles/*.css'],
     exclude: ['vendor/bootstrap/**/*'],
     plugins: [
@@ -103,14 +105,15 @@ npm i --save-dev autoprefixer
 Specify some plug-ins in your `ember-cli-build.js`:
 
 ```javascript
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var autoprefixer = require('autoprefixer');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const autoprefixer = require('autoprefixer');
 
 module.exports = function (defaults) {
-  var app = new EmberApp(defaults, {
+  const app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
-        enabled: false
+        enabled: false,
+        browsers: ['last 3 versions'], // this will override config found in config/targets.js
       },
       filter: {
         enabled: true,
@@ -118,7 +121,7 @@ module.exports = function (defaults) {
           {
             module: autoprefixer,
             options: {
-              browsers: ['last 2 version']
+              browsers: ['last 2 versions'] // this will override the config, but just for this plugin
             }
           }
         ]
