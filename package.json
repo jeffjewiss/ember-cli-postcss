@@ -1,0 +1,88 @@
+{
+  "name": "ember-cli-postcss",
+  "version": "3.4.1",
+  "description": "Use postcss to process your css with a large selection of JavaScript plug-ins.",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "ember build",
+    "start": "ember server",
+    "test": "npm run lint && ember try:each",
+    "lint": "eslint config *.js"
+  },
+  "files": [
+    "config/environment.js",
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeffjewiss/ember-cli-postcss"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffjewiss/ember-cli-postcss/issues"
+  },
+  "homepage": "https://github.com/jeffjewiss/ember-cli-postcss",
+  "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bower": "1.8.0",
+    "broccoli-merge-trees": "2.0.0",
+    "broccoli-postcss": "3.4.1",
+    "broccoli-postcss-single": "1.4.0",
+    "ember-cli-dependency-checker": "2.0.1",
+    "merge": "1.2.0"
+  },
+  "keywords": [
+    "ember-addon",
+    "css",
+    "prefix",
+    "preprocess",
+    "postprocess",
+    "postcss"
+  ],
+  "ember-addon": {
+    "configPath": "tests/dummy/config",
+    "before": [
+      "ember-cli-sri",
+      "broccoli-asset-rev"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "testem.js"
+    ]
+  },
+  "devDependencies": {
+    "broccoli-asset-rev": "^2.4.2",
+    "ember-cli": "^2.12.1",
+    "ember-cli-app-version": "^3.0.0",
+    "ember-cli-babel": "^6.1.0",
+    "ember-cli-eslint": "^3.01.0",
+    "ember-cli-htmlbars": "^2.0.1",
+    "ember-cli-htmlbars-inline-precompile": "^0.4.0",
+    "ember-cli-inject-live-reload": "^1.4.0",
+    "ember-cli-qunit": "^4.0.0",
+    "ember-cli-release": "^0.2.9",
+    "ember-cli-sri": "^2.1.0",
+    "ember-cli-test-loader": "^2.1.0",
+    "ember-cli-uglify": "^1.2.0",
+    "ember-disable-prototype-extensions": "^1.1.0",
+    "ember-disable-proxy-controllers": "^1.0.1",
+    "ember-export-application-global": "^2.0.0",
+    "ember-load-initializers": "^1.0.0",
+    "ember-resolver": "^4.0.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.0",
+    "eslint-plugin-ember-suave": "^1.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-node": "^5.0.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.0",
+    "loader.js": "^4.1.0",
+    "minimatch": "^3.0.0",
+    "postcss-color-gray": "^4.0.0",
+    "postcss-color-rebeccapurple": "^3.0.0"
+  }
+}
