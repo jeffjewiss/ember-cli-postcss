@@ -38,15 +38,31 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
 
 module.exports = {
   name: 'ember-cli-postcss',
+  options: {
+    nodeAssets: {
+      postcss () {
+        // TODO: loop through plugins array and include them as well
+
+        let assetConfig = {
+          enabled: this.options.shimEnabled,
+          vendor: {
+            srcDir: 'lib',
+            include: ['postcss.js']
+          }
+        }
+
+        return assetConfig
+      }
+    }
+  },
 
   included (app) {
-    this._super.included.apply(this, arguments)
-
     let env = process.env.EMBER_ENV
     let browsers = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
     this.options = merge.recursive({}, {
+      shimEnabled: false,
       compile: {
         enabled: true,
         browsers,
@@ -62,6 +78,12 @@ module.exports = {
         plugins: []
       }
     }, this._getAddonOptions(app).postcssOptions)
+
+    if (this.options.shimEnabled) {
+      app.import('vendor/postcss/lib/postcss.js')
+    }
+
+    this._super.included.apply(this, arguments)
   },
 
   _getAddonOptions (app) {
