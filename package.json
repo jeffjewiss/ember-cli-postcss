@@ -12,6 +12,9 @@
     "test": "npm run lint && ember try:each",
     "lint": "eslint config *.js"
   },
+  "engines": {
+    "node": "^4.5 || 6.* || >= 7.*"
+  },
   "files": [
     "config/environment.js",
     "index.js"
@@ -57,9 +60,9 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
-    "ember-cli": "^2.12.1",
+    "ember-cli": "^2.14.0",
     "ember-cli-app-version": "^3.0.0",
-    "ember-cli-babel": "^6.1.0",
+    "ember-cli-babel": "^6.6.0",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.4.0",
