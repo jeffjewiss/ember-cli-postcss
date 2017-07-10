@@ -3,6 +3,7 @@ language: node_js
 node_js:
   - "4"
   - "6"
+  - "7"
 
 sudo: false
 
@@ -11,7 +12,6 @@ cache:
     - node_modules
 
 env:
-  - EMBER_TRY_SCENARIO=ember-1.13
   - EMBER_TRY_SCENARIO=ember-2.4
   - EMBER_TRY_SCENARIO=ember-2.8
   - EMBER_TRY_SCENARIO=ember-release
