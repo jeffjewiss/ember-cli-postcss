@@ -25,12 +25,17 @@ matrix:
 
 before_install:
   - npm config set spin false
-  - npm install -g bower
+  - npm install -g yarn
   - npm install phantomjs-prebuilt
+  - yarn global add greenkeeper-lockfile@1
+  - yarn global add bower
 
 install:
-  - npm install
+  - yarn
   - bower install
+
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 
 script:
   # Usually, it's ok to finish the test scenario without reverting
