@@ -1,5 +1,9 @@
 # master
 
+# 3.4.2
+
+* initial Node 8 support
+
 # 3.4.1
 
 * support `config/targets.js` and overriding `browsers` options
