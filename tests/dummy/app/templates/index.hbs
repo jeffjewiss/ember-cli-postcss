@@ -1,0 +1,27 @@
+<h1>Ember CLI Postcss</h1>
+
+<h2>A tool for transforming CSS with JavaScript plugins in your Ember project.</h2>
+
+
+<pre>
+  <code>
+    ember install ember-cli-postcss
+  </code>
+</pre>
+
+
+<pre>
+  <code>
+    module.exports = function (defaults) {
+      let app = new EmberAddon(defaults, {
+        postcssOptions: {
+          compile: {
+            plugins: [
+              { module: require('postcss-cssnext') }
+            ]
+          }
+        }
+      })
+    }
+  </code>
+</pre>

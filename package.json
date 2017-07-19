@@ -94,6 +94,8 @@
     "loader.js": "^4.1.0",
     "minimatch": "^3.0.0",
     "postcss-color-gray": "^4.0.0",
-    "postcss-color-rebeccapurple": "^3.0.0"
+    "postcss-color-rebeccapurple": "^3.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "tachyons": "^4.7.4"
   }
 }

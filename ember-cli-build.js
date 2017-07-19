@@ -8,6 +8,7 @@ module.exports = function (defaults) {
       app: {
         css: {
           'app': '/assets/dummy.css',
+          'primary': '/assets/primary.css',
           'secondary': '/assets/secondary.css'
         }
       }
@@ -15,13 +16,14 @@ module.exports = function (defaults) {
     postcssOptions: {
       compile: {
         plugins: [
-          { module: require('postcss-color-gray') }
+          { module: require('postcss-cssnext') }
         ]
       },
       filter: {
         enabled: true,
         plugins: [
-          { module: require('postcss-color-rebeccapurple') }
+          { module: require('postcss-color-rebeccapurple') },
+          { module: require('postcss-color-gray') }
         ]
       }
     }

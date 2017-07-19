@@ -1,7 +1,9 @@
-#title {
-  color: gray(0);
+:root {
+  --background: #faf8f5;
 }
 
-#paragraph {
-  color: rebeccapurple;
+@import 'tachyons';
+
+html {
+  background: var(--background);
 }
