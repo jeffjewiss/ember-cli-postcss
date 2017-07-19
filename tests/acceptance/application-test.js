@@ -26,9 +26,9 @@ module('Acceptance: Application (Chrome Only)', {
 test('Verify postcss has run', (assert) => {
   assert.expect(4)
 
-  visit('/')
+  visit('/test')
   andThen(function () {
-    assert.equal(currentPath(), 'index', 'On the index page')
+    assert.equal(currentPath(), 'test', 'On the index page')
     assert.equal(find('#title').length, 1, 'Page contains a header title')
     assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)', 'postcss-color-gray has run')
     assert.equal(getCssProperty('paragraph', 'color'), 'rgb(102, 51, 153)', 'postcss-rebeccapurple has run')
@@ -38,9 +38,9 @@ test('Verify postcss has run', (assert) => {
 test('Verify additional files can be compiled', (assert) => {
   assert.expect(2)
 
-  visit('/')
+  visit('/test')
   andThen(function () {
-    assert.equal(currentPath(), 'index', 'On the index page')
+    assert.equal(currentPath(), 'test', 'On the index page')
     assert.equal(getCssProperty('paragraph', 'margin-bottom'), '16px', 'secondary.css has been processed')
   })
 })
