@@ -1,11 +1,40 @@
 /* eslint-env node */
 'use strict'
 
+const fs = require('fs')
 const path = require('path')
 const merge = require('merge')
 const mergeTrees = require('broccoli-merge-trees')
+const writeFile = require('broccoli-file-creator')
 const postcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
+const EngineAddon = require('ember-engines/lib/engine-addon')
+
+function createFile () {
+  let fixtures = [
+    'github',
+    'segment',
+    'stripe',
+    'twitter'
+  ]
+
+  let statsData = fixtures.map((name) => {
+    let filename = `${name}.css`
+
+    return {
+      filename,
+      stats: fs.readFileSync(path.join(__dirname, `fixtures/${name}.css.json`), 'utf8')
+    }
+  })
+
+  let content = `export default {
+    files: [
+      ${statsData}
+    ]
+  }`
+
+  return writeFile('app/cssstats.js', content)
+}
 
 function PostcssPlugin (addon) {
   this.name = 'ember-cli-postcss'
@@ -36,8 +65,9 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
   return mergeTrees(trees)
 }
 
-module.exports = {
+module.exports = EngineAddon.extend({
   name: 'ember-cli-postcss',
+  lazyLoading: false,
 
   included (app) {
     this._super.included.apply(this, arguments)
@@ -78,5 +108,10 @@ module.exports = {
   setupPreprocessorRegistry (type, registry) {
     let addon = this
     registry.add('css', new PostcssPlugin(addon))
+  },
+
+  treeForApp (tree) {
+    // merge the new stats file with the app tree
+    return mergeTrees([this.app.trees.app, createFile()])
   }
-}
+})
