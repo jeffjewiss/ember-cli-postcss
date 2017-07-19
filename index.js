@@ -3,9 +3,14 @@
 
 const path = require('path')
 const merge = require('merge')
-const mergeTrees = require('broccoli-merge-trees')
 const postcssFilter = require('broccoli-postcss')
+const MergeTrees = require('broccoli-merge-trees')
 const PostcssCompiler = require('broccoli-postcss-single')
+const Rollup = require('broccoli-rollup')
+const commonjs = require('rollup-plugin-commonjs')
+const nodeResolve = require('rollup-plugin-node-resolve')
+const nodeBuiltins = require('rollup-plugin-node-builtins')
+const nodeGlobals = require('rollup-plugin-node-globals')
 
 function PostcssPlugin (addon) {
   this.name = 'ember-cli-postcss'
@@ -33,7 +38,7 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
     return new PostcssCompiler(inputTrees, input, output, options)
   })
 
-  return mergeTrees(trees)
+  return MergeTrees(trees)
 }
 
 module.exports = {
@@ -43,15 +48,27 @@ module.exports = {
       postcss () {
         // TODO: loop through plugins array and include them as well
 
-        let assetConfig = {
-          enabled: this.options.shimEnabled,
+        return {
+          enabled: this._options.shimEnabled,
           vendor: {
-            srcDir: 'lib',
-            include: ['postcss.js']
+            processTree (input) {
+              return new Rollup(input, {
+                rollup: {
+                  entry: 'postcss/lib/postcss.js',
+                  dest: 'postcss.js',
+                  format: 'amd',
+                  moduleName: 'postcss',
+                  plugins: [
+                    nodeResolve({ jsnext: true }),
+                    commonjs(),
+                    nodeGlobals(),
+                    nodeBuiltins()
+                  ]
+                }
+              })
+            }
           }
         }
-
-        return assetConfig
       }
     }
   },
@@ -61,8 +78,9 @@ module.exports = {
     let browsers = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
-    this.options = merge.recursive({}, {
+    this._options = merge.recursive({}, {
       shimEnabled: false,
+      shimPlugins: [],
       compile: {
         enabled: true,
         browsers,
@@ -79,8 +97,10 @@ module.exports = {
       }
     }, this._getAddonOptions(app).postcssOptions)
 
-    if (this.options.shimEnabled) {
-      app.import('vendor/postcss/lib/postcss.js')
+    if (this._options.shimEnabled) {
+      this.import('vendor/postcss.js', {
+        using: [{ transformation: 'amd', as: 'postcss' }]
+      })
     }
 
     this._super.included.apply(this, arguments)
@@ -91,14 +111,14 @@ module.exports = {
   },
 
   postprocessTree (type, tree) {
-    if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
-      tree = mergeTrees([tree, postcssFilter(tree, this.options.filter)], { overwrite: true })
+    if (this._options.filter.enabled && (type === 'all' || type === 'styles')) {
+      tree = MergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
     }
     return tree
   },
 
   setupPreprocessorRegistry (type, registry) {
     let addon = this
-    registry.add('css', new PostcssPlugin(addon))
+    // registry.add('css', new PostcssPlugin(addon))
   }
 }
