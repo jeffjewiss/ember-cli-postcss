@@ -1,5 +1,9 @@
 # master
 
+# 3.5.0
+
+* upgrade broccoli-postcss for Node 8 support
+
 # 3.4.2
 
 * initial Node 8 support
