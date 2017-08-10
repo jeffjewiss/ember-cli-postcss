@@ -1,14 +1,13 @@
-import Ember from 'ember'
 import Application from '../../app'
 import config from '../../config/environment'
-
-const { merge, run } = Ember
+import { run } from 'ember-runloop'
+import { assign } from 'ember-platform'
 
 export default function startApp (attrs) {
   let application
 
-  let attributes = merge({}, config.APP)
-  attributes = merge(attributes, attrs) // use defaults, but you can override;
+  let attributes = assign({}, config.APP)
+  attributes = assign(attributes, attrs) // use defaults, but you can override;
 
   run(() => {
     application = Application.create(attributes)

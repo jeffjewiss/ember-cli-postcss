@@ -1,9 +1,9 @@
-/* jshint node: true */
+/* eslint-env node */
 
 module.exports = function (environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -19,8 +19,6 @@ module.exports = function (environment) {
     }
   }
 
-  ENV.EmberENV.RAISE_ON_DEPRECATION = !process.env['ALLOW_DEPRECATIONS']
-
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -31,8 +29,8 @@ module.exports = function (environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.rootURL = '/'
     ENV.locationType = 'none'
+    ENV.rootURL = '/'
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false
@@ -42,7 +40,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-
+    // keep
   }
 
   return ENV
