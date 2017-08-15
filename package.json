@@ -35,7 +35,6 @@
     "broccoli-merge-trees": "2.0.0",
     "broccoli-postcss": "3.5.0",
     "broccoli-postcss-single": "1.4.0",
-    "ember-cli-dependency-checker": "2.0.1",
     "merge": "1.2.0"
   },
   "keywords": [
@@ -63,6 +62,7 @@
     "ember-cli": "^2.14.0",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
+    "ember-cli-dependency-checker": "2.0.1",
     "ember-cli-eslint": "^4.0.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.4.0",
