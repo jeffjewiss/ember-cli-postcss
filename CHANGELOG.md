@@ -1,5 +1,9 @@
 # master
 
+# 3.5.1
+
+* moved `ember-cli-dependency-checker` to dev dependencies
+
 # 3.5.0
 
 * upgrade broccoli-postcss for Node 8 support
