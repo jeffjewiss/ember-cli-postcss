@@ -31,7 +31,6 @@
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "bower": "1.8.0",
     "broccoli-merge-trees": "2.0.0",
     "broccoli-postcss": "3.5.0",
     "broccoli-postcss-single": "1.4.0",
@@ -58,6 +57,7 @@
     ]
   },
   "devDependencies": {
+    "bower": "^1.8.0",
     "broccoli-asset-rev": "^2.4.2",
     "ember-cli": "^2.14.0",
     "ember-cli-app-version": "^3.0.0",
@@ -69,6 +69,7 @@
     "ember-cli-inject-live-reload": "^1.4.0",
     "ember-cli-qunit": "^4.0.0",
     "ember-cli-release": "^0.2.9",
+    "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-test-loader": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
@@ -77,6 +78,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-resolver": "^4.0.0",
+    "ember-source": "^2.14.1",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-ember-suave": "^1.0.0",
