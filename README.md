@@ -131,3 +131,6 @@ module.exports = function (defaults) {
   return app.toTree();
 };
 ```
+
+#### Sponsor
+[![Sponsor](https://app.codesponsor.io/embed/H7bZKd45V3ahr55pXGPsoc37/jeffjewiss/ember-cli-postcss.svg)](https://app.codesponsor.io/link/H7bZKd45V3ahr55pXGPsoc37/jeffjewiss/ember-cli-postcss)
