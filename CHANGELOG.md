@@ -1,5 +1,10 @@
 # master
 
+# 3.5.2
+
+* move `bower` to devDependencies
+* improve Travis and `ember-try` test setup
+
 # 3.5.1
 
 * moved `ember-cli-dependency-checker` to dev dependencies
