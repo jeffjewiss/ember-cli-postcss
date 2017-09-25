@@ -33,7 +33,7 @@
   "dependencies": {
     "broccoli-merge-trees": "2.0.0",
     "broccoli-postcss": "3.5.0",
-    "broccoli-postcss-single": "1.4.0",
+    "broccoli-postcss-single": "1.4.1",
     "merge": "1.2.0"
   },
   "keywords": [
