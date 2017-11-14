@@ -1,5 +1,10 @@
 # master
 
+# 3.6.0
+
+* allow plugins to be specified as functions for both compile and filter
+* update dependencies
+
 # 3.5.2
 
 * move `bower` to devDependencies
