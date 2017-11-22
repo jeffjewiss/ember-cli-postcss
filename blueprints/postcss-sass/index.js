@@ -1,4 +1,6 @@
 module.exports = {
+  name: 'postcss-sass',
+
   normalizeEntityName () {}, // no-op since we're just adding dependencies
 
   afterInstall () {
