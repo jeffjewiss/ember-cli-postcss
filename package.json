@@ -17,6 +17,7 @@
     "node": "6.* || >= 7.*"
   },
   "files": [
+    "blueprints",
     "config/environment.js",
     "index.js"
   ],
