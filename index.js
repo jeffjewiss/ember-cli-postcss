@@ -3,6 +3,8 @@
 
 const path = require('path')
 const merge = require('merge')
+const { version } = require('./package.json')
+const writeFile = require('broccoli-file-creator')
 const mergeTrees = require('broccoli-merge-trees')
 const postcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
@@ -41,6 +43,7 @@ module.exports = {
 
   included (app) {
     this._super.included.apply(this, arguments)
+    this._ensureThisImport()
 
     let env = process.env.EMBER_ENV
     let browsers = this.project.targets && this.project.targets.browsers
@@ -62,10 +65,29 @@ module.exports = {
         plugins: []
       }
     }, this._getAddonOptions(app).postcssOptions)
+
+    this.import('vendor/ember-cli-postcss/register-version.js')
   },
 
   _getAddonOptions (app) {
     return (this.parent && this.parent.options) || (app && app.options) || {}
+  },
+
+  _ensureThisImport () {
+    if (!this.import) {
+      this._findHost = function findHostShim () {
+        let current = this
+        let app
+        do {
+          app = current.app || app
+        } while (current.parent.parent && (current = current.parent))
+        return app
+      }
+      this.import = function importShim (asset, options) {
+        let app = this._findHost()
+        app.import(asset, options)
+      }
+    }
   },
 
   postprocessTree (type, tree) {
@@ -78,5 +100,15 @@ module.exports = {
   setupPreprocessorRegistry (type, registry) {
     let addon = this
     registry.add('css', new PostcssPlugin(addon))
+  },
+
+  treeForVendor () {
+    let content = `Ember.libraries.register('Ember Postcss', '${version}');`
+    let registerVersionTree = writeFile(
+      'ember-cli-postcss/register-version.js',
+      content
+    )
+
+    return mergeTrees([registerVersionTree])
   }
 }
