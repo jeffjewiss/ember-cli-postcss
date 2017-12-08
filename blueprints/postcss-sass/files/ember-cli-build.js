@@ -8,9 +8,23 @@ module.exports = function(defaults) {
     postcssOptions: {
       compile: {
         enabled: true,
-        parser: require('postcss-scss'),
         plugins: [
-          { module: require('precss') }
+          { module: require('@csstools/postcss-sass') },
+          { module: require('cssstats') },
+          { module: require('postcss-stats-reporter') },
+          { module: require('postcss-reporter') }
+        ]
+      },
+      filter: {
+        enabled: true,
+        plugins: [
+          {
+            module: require('autoprefixer'),
+            options: {
+              remove: false,
+              browsers: ['last 2 versions']
+            }
+          }
         ]
       }
     }

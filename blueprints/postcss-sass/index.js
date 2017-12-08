@@ -6,11 +6,19 @@ module.exports = {
   afterInstall () {
     return this.addPackagesToProject([
       {
-        name: 'postcss-scss',
-        target: '1.0.1'
+        name: '@csstools/postcss-sass'
       },
-      { name: 'precss',
-        target: '1.3.0'
+      {
+        name: 'cssstats'
+      },
+      { name:
+        'postcss-stats-reporter'
+      },
+      { name:
+        'postcss-reporter'
+      },
+      { name:
+        'autoprefixer'
       }
     ])
   }
