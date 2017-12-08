@@ -1,5 +1,9 @@
 # master
 
+# 3.6.1
+
+* fix Node 9 support
+
 # 3.6.0
 
 * allow plugins to be specified as functions for both compile and filter
