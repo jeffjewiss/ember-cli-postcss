@@ -1,5 +1,10 @@
 # master
 
+# 3.6.2
+
+* fix Node 4 support
+* add a blueprint for using Sass + Postcss
+
 # 3.6.1
 
 * fix Node 9 support
