@@ -3,7 +3,7 @@
 
 const path = require('path')
 const merge = require('merge')
-const { version } = require('./package.json')
+const version = require('./package.json').version // eslint-disable-line
 const writeFile = require('broccoli-file-creator')
 const mergeTrees = require('broccoli-merge-trees')
 const postcssFilter = require('broccoli-postcss')
