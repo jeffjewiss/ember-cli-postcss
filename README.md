@@ -131,3 +131,32 @@ module.exports = function (defaults) {
   return app.toTree();
 };
 ```
+
+Developing Addons
+-----------------
+
+If you are a developing an addon and would like to use `ember-cli-postcss` to process the CSS to automatically be included in the `vendor.css` of Ember applications consuming the addon, there are 2 steps to follow.
+
+1. create your styles in `addon/styles/addon.css` (you can import other CSS files if a postcss import plugin is installed)
+2. configure your addon’s options to process postcss:
+
+```javascript
+// index.js
+const CssImport = require('postcss-import')
+const CssNext = require('postcss-cssnext')
+
+module.exports = {
+  options: {
+    postcssOptions: {
+      compile: {
+        enabled: true,
+        plugins: [
+          { module: CssImport },
+          { module: CssNext }
+        ]
+      }
+    }
+  }
+  ...
+}
+```
