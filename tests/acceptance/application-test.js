@@ -29,9 +29,9 @@ test('Verify postcss has run', (assert) => {
   visit('/test')
   andThen(function () {
     assert.equal(currentPath(), 'test', 'On the index page')
-    assert.equal(find('#title').length, 1, 'Page contains a header title')
-    assert.equal(getCssProperty('title', 'color'), 'rgb(0, 0, 0)', 'postcss-color-gray has run')
-    assert.equal(getCssProperty('paragraph', 'color'), 'rgb(102, 51, 153)', 'postcss-rebeccapurple has run')
+    assert.equal(find('#test-title').length, 1, 'Page contains a header title')
+    assert.equal(getCssProperty('test-title', 'color'), 'rgb(10, 10, 10)', 'postcss-color-gray has run on title')
+    assert.equal(getCssProperty('test-paragraph', 'color'), 'rgb(255, 0, 0)', 'postcss-color-gray has run on paragraph')
   })
 })
 
@@ -41,6 +41,6 @@ test('Verify additional files can be compiled', (assert) => {
   visit('/test')
   andThen(function () {
     assert.equal(currentPath(), 'test', 'On the index page')
-    assert.equal(getCssProperty('paragraph', 'margin-bottom'), '16px', 'secondary.css has been processed')
+    assert.equal(getCssProperty('test-paragraph', 'margin-bottom'), '45px', 'secondary.css has been processed')
   })
 })

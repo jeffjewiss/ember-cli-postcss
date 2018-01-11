@@ -1,8 +1,8 @@
+@import 'tachyons';
+
 :root {
   --background: #faf8f5;
 }
-
-@import 'tachyons';
 
 html {
   background: var(--background);

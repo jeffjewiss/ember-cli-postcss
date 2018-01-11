@@ -16,14 +16,15 @@ module.exports = function (defaults) {
     postcssOptions: {
       compile: {
         plugins: [
+          { module: require('postcss-import') },
           { module: require('postcss-cssnext') }
         ]
       },
       filter: {
         enabled: true,
         plugins: [
-          { module: require('postcss-color-rebeccapurple') },
-          { module: require('postcss-color-gray') }
+          { module: require('postcss-color-gray') },
+          { module: require('postcss-color-function') }
         ]
       }
     }

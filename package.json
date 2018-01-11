@@ -93,9 +93,10 @@
     "eslint-plugin-standard": "^3.0.0",
     "loader.js": "^4.1.0",
     "minimatch": "^3.0.0",
+    "postcss-color-function": "4.0.1",
     "postcss-color-gray": "^4.0.0",
-    "postcss-color-rebeccapurple": "^3.0.0",
     "postcss-cssnext": "^3.0.2",
+    "postcss-import": "11.0.0",
     "tachyons": "^4.7.4"
   }
 }
