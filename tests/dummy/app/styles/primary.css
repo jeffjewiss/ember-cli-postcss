@@ -1,7 +1,8 @@
-#title {
-  color: gray(0);
+#test-title {
+  color: gray(10);
 }
 
-#paragraph {
-  color: rebeccapurple;
+#test-paragraph {
+  color: color(red a(100%))
 }
+
