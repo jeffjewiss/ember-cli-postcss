@@ -1,11 +1,19 @@
-ember-cli-postcss
-=================
+<div align="center">
+  <img src="https://jeffjewiss.github.io/ember-cli-postcss/postcss.svg">
+</div>
 
-[![Build Status](https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-cli-postcss)
-[![npm version](https://badge.fury.io/js/ember-cli-postcss.svg)](http://badge.fury.io/js/ember-cli-postcss)
-[![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss)
+<h1 align="center">Ember CLI Postcss</h1>
 
-Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](http://postcss.parts).
+<div align="center">
+  [![Build Status](https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-cli-postcss)
+  [![npm version](https://img.shields.io/npm/v/ember-cli-postcss.svg)](https://www.npmjs.com/package/ember-cli-postcss)
+  [![Downloads](https://img.shields.io/npm/dm/ember-cli-postcss.svg)](https://www.npmjs.com/package/ember-cli-postcss)
+  [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss)
+</div>
+
+<div align="center" style="margin-top: 1rem; margin-bottom: 4rem;">
+  <p>Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](http://postcss.parts).</p>
+</div>
 
 Installation
 ------------
