@@ -5,10 +5,10 @@
 <h1 align="center">Ember CLI Postcss</h1>
 
 <div align="center">
-  [![Build Status](https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master)](https://travis-ci.org/jeffjewiss/ember-cli-postcss)
-  [![npm version](https://img.shields.io/npm/v/ember-cli-postcss.svg)](https://www.npmjs.com/package/ember-cli-postcss)
-  [![Downloads](https://img.shields.io/npm/dm/ember-cli-postcss.svg)](https://www.npmjs.com/package/ember-cli-postcss)
-  [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-postcss.svg)](http://emberobserver.com/addons/ember-cli-postcss)
+  <a href="https://travis-ci.org/jeffjewiss/ember-cli-postcss"><img src="https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master" alt="Build Status"></a>
+  <a href="https://www.npmjs.com/package/ember-cli-postcss"><img src="https://img.shields.io/npm/v/ember-cli-postcss.svg" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/ember-cli-postcss"><img src="https://img.shields.io/npm/dm/ember-cli-postcss.svg" alt="Monthly Downloads"></a>
+  <a href="http://emberobserver.com/addons/ember-cli-postcss"><img src="http://emberobserver.com/badges/ember-cli-postcss.svg" alt="Ember Observer Score"></a>
 </div>
 
 <div align="center" style="margin-top: 1rem; margin-bottom: 4rem;">
