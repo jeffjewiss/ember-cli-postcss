@@ -8,6 +8,8 @@ const MyRouter = Router.extend({
 
 MyRouter.map(function () {
   this.route('test')
+  this.route('docs')
+  this.route('library')
 })
 
 export default MyRouter
