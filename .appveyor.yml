@@ -12,9 +12,13 @@ environment:
 # Install scripts. (runs after repo cloning)
 install:
   - ps: Install-Product node $env:nodejs_version
+  - choco install googlechrome
   - appveyor-retry npm i -g npm@^4
   - appveyor-retry yarn
   - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
+  - node --version
+  - yarn --version
+
 
 cache:
   - '%LOCALAPPDATA%\Yarn'
@@ -23,8 +27,7 @@ cache:
 test_script:
   # Output useful info for debugging.
   - git rev-parse HEAD
-  - cmd: yarn run lint
-  - cmd: node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+  - cmd: yarn run test:appveyor
 
 # Don't actually build.
 build: off
