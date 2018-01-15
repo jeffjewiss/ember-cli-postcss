@@ -2602,7 +2602,7 @@ ember-cli@^2.14.0:
     walk-sync "^0.3.0"
     yam "0.0.22"
 
-ember-code-prettify@0.0.1:
+ember-code-prettify@^0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/ember-code-prettify/-/ember-code-prettify-0.0.1.tgz#4d78615053c10d4a0be7eba371882a9d3da47a13"
   dependencies:
