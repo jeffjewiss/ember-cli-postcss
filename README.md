@@ -11,9 +11,15 @@
   <a href="http://emberobserver.com/addons/ember-cli-postcss"><img src="http://emberobserver.com/badges/ember-cli-postcss.svg" alt="Ember Observer Score"></a>
 </div>
 
-<div align="center" style="margin-top: 1rem; margin-bottom: 4rem;">
-  <p>Use <a href="http://github.com/postcss/postcss">postcss</a> to process your `css` with a large selection of <a href="http://postcss.parts">plug-ins</a>.</p>
+<br>
+
+<div align="center">
+  <p>Use <a href="http://github.com/postcss/postcss">postcss</a> to process your <strong>css</strong> with a large selection of <a href="http://postcss.parts">plug-ins</a>.</p>
 </div>
+
+<br>
+<br>
+<br>
 
 Installation
 ------------
