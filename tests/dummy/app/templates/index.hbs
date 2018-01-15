@@ -1,27 +1,42 @@
-<h1>Ember CLI Postcss</h1>
+<header class="w-100 pv5 mt4">
+  <div class="flex flex-column items-center mb5 mw7 center ph3">
+    <img src="postcss.svg" class="">
+    <h1 class="f1 mb0 tc navy">Ember CLI Postcss</h1>
+    <h2 class="f4 normal dark-gray tc">Transform CSS with JavaScript plugins in Your Ember Apps and Addons</h2>
+    <a href="https://npmjs.com/package/ember-cli-postcss" class="link f6 normal silver tc i">Currently v3.6.2</a>
+  </div>
+</header>
 
-<h2>A tool for transforming CSS with JavaScript plugins in your Ember project.</h2>
+<section class="w-100 pv5 bt b--black-10">
+  <div class="mw7 center ph3">
+    <h3 class="f2 near-black mt2">The Benefits</h3>
+    <p class="lh-copy">Postcss creates an AST representation of your CSS and then applies transformations to it through a series of plugins. This gives you the stability of using plugins that follow the CSS spec or adding lots of powerful custom transformations to suit your project or development needs.</p>
+    <p class="lh-copy">This addon allows you to use Postcss as your main style processor or use it at the end of the build process to transform your vendor styles as well as your app styles. You can also opt to use both of these processes for greator customization.</p>
+    <p class="lh-copy">With minimal configuration you can setup plugins like <strong>autoprefixer</strong> or <strong>stylehint</strong>, to take care of vendor prefixes or lint your styles, respectively.</p>
+    <p class="lh-copy">The postcss library and all of the plugins are written in JavaScript, so you don't need to worry about additional dependencies in other languages.</p>
+  </div>
+</section>
 
-
-<pre>
-  <code>
-    ember install ember-cli-postcss
-  </code>
-</pre>
-
-
-<pre>
-  <code>
-    module.exports = function (defaults) {
-      let app = new EmberAddon(defaults, {
-        postcssOptions: {
-          compile: {
-            plugins: [
-              { module: require('postcss-cssnext') }
-            ]
-          }
-        }
-      })
+<section class="w-100 pv5 bg-lightest-blue navy bt b--black-10">
+  <div class="mw7 center ph3">
+    <h3 class="f2 mt2 near-black">Getting Started</h3>
+    <p class="lh-copy">The easiest way to use <a href="https://postcss.org" class="link b blue hover-black">Postcss</a> with an Ember application is to use this addon as the main processor for CSS files.</p>
+    <p class="lh-copy">First you'll need to install the addon:</p>
+    <pre class="prettyprint lang-bash mv4"><code>$ ember install ember-cli-postcss</code></pre>
+    <p class="lh-copy">Next you'll want to configure the addon as part of the options for your <i>ember-cli-build.js</i> file. Postcss relies on plugins to transform CSS, so you'll need to specify at least one plugin. In this example we'll use two plugins, one to allow other CSS files to be imported form the filesystem and from npm packages, and another to allow future CSS syntax to be used.</p>
+    <pre class="prettyprint lang-js linenums lh-copy mv4"><code class="lh-copy">// ember-cli-build.js
+module.exports = function (defaults) {
+  let app = new EmberAddon(defaults, {
+    postcssOptions: {
+      compile: {
+        plugins: [
+          { module: require('postcss-import') },
+          { module: require('postcss-cssnext') }
+        ]
+      }
     }
-  </code>
-</pre>
+  })
+}</code></pre>
+    <p class="lh-copy">Now Postcss will be used to process your <i>app.css</i> file. Further information on advanced usage and all of the available configuration options can be found in the {{#link-to "docs" title="Documentation" class="link b blue hover-black"}}docs{{/link-to}} or you can browse examples of different use cases in the {{#link-to "library" title="Configuration Library" class="link b blue hover-black"}}configuration library{{/link-to}}.</p>
+  </div>
+</section>

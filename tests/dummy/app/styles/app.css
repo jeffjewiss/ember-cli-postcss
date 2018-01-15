@@ -1,9 +1,30 @@
 @import 'tachyons';
+@import 'prettify.css';
 
 :root {
   --background: #faf8f5;
 }
 
-html {
-  background: var(--background);
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.octocat {
+  fill: #333;
+
+  &:hover {
+    fill: black;
+  }
+
+  & .octocat-arm, & .octocat-body {
+    fill: #fff;
+  }
+}
+
+pre.prettyprint {
+  padding: 1rem 1.5rem;
+  white-space: pre;
+  line-height: 1.5;
+  overflow-x: auto;
 }
