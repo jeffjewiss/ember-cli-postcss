@@ -12,7 +12,7 @@
 </div>
 
 <div align="center" style="margin-top: 1rem; margin-bottom: 4rem;">
-  <p>Use [postcss](http://github.com/postcss/postcss) to process your `css` with a large selection of [plug-ins](http://postcss.parts).</p>
+  <p>Use <a href="http://github.com/postcss/postcss">postcss</a> to process your `css` with a large selection of <a href="http://postcss.parts">plug-ins</a>.</p>
 </div>
 
 Installation
