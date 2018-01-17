@@ -174,3 +174,51 @@ module.exports = {
   ...
 }
 ```
+
+Migrating from other Processors
+-------------------------------
+
+If you’d like to migrate a project from one of the other processors, such as Less, Sass, or Stylus, you can configure Postcss with an appropriate parser and set of plugins that provides an equivalent set of features.
+
+This then allows you to use additional Postcss plugins at the end of the compilation to continue transforming your styles for more powerful control of authoring styles in your application. This also plays nicely with [ember-component-css](https://github.com/ebryn/ember-component-css).
+
+So far this migration process has been tested when switching from Sass.
+
+
+### Switching from Sass
+
+One common use case is to transition from using Sass to Postcss or using them both together. As of `ember-cli-postcss@3.7.0` this is possible with the right combination of options and plugins.
+
+There are three key pieces of configuration:
+
+1. Set the parser to `postcss-scss`
+2. Configure the extension to match your files (ie. 'scss')
+3. Use `@csstools/postcss-sass` as the first plugin
+
+Your configuration options in `ember-cli-build.js` would contain the following options for this addon:
+
+```javascript
+  postcssOptions: {
+    compile: {
+      extension: 'scss',
+      enabled: true,
+      parser: require('postcss-scss'),
+      plugins: [
+        {
+          module: require('@csstools/postcss-sass'),
+          options: {
+            includePaths: [
+              'node_modules/tachyons-sass',
+            ],
+          },
+        },
+        ...
+      ],
+    },
+    ...
+  }
+```
+
+This allows your to switch your CSS processing pipeline to use postcss without being hugely disruptive as you can keep the Sass features and `.scss` or `.sass` file extension. The importing feature of `@csstools/postcss-sass` will also look for `.css` files, so you can choose to gradually rename your files from Sass partials `_<filename>.scss` to `<filename>.css` without breaking anything.
+
+If your goal is to completely move away from using Sass features you can remove the parser, remove the sass plugin, use an import plugin that fits your needs and ensure that your files have the `.css` extension.
