@@ -37,7 +37,7 @@
     "broccoli-file-creator": "1.1.1",
     "broccoli-merge-trees": "2.0.0",
     "broccoli-postcss": "3.5.2",
-    "broccoli-postcss-single": "1.5.1",
+    "broccoli-postcss-single": "1.6.0",
     "merge": "1.2.0"
   },
   "keywords": [

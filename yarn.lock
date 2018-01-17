@@ -1406,15 +1406,15 @@ broccoli-plugin@^1.0.0, broccoli-plugin@^1.1.0, broccoli-plugin@^1.2.0, broccoli
     rimraf "^2.3.4"
     symlink-or-copy "^1.1.8"
 
-broccoli-postcss-single@1.5.1:
-  version "1.5.1"
-  resolved "https://registry.npmjs.org/broccoli-postcss-single/-/broccoli-postcss-single-1.5.1.tgz#f5678698f30da30754dc78531a9c4dc8e75b3012"
+broccoli-postcss-single@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/broccoli-postcss-single/-/broccoli-postcss-single-1.6.0.tgz#da008ba24087f5cd1d7ec851d3d8921c9896a8ff"
   dependencies:
     broccoli-caching-writer "3.0.3"
     include-path-searcher "0.1.0"
     mkdirp "0.5.1"
     object-assign "4.1.1"
-    postcss "6.0.14"
+    postcss "6.0.16"
 
 broccoli-postcss@3.5.2:
   version "3.5.2"
@@ -5709,7 +5709,7 @@ postcss@6.0.14:
     source-map "^0.6.1"
     supports-color "^4.4.0"
 
-postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.15, postcss@^6.0.5, postcss@^6.0.6:
+postcss@6.0.16, postcss@^6.0.0, postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.13, postcss@^6.0.14, postcss@^6.0.15, postcss@^6.0.5, postcss@^6.0.6:
   version "6.0.16"
   resolved "https://registry.npmjs.org/postcss/-/postcss-6.0.16.tgz#112e2fe2a6d2109be0957687243170ea5589e146"
   dependencies:
