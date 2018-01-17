@@ -1,5 +1,10 @@
 # master
 
+# 3.7.0
+
+* add support for using a custom postcss parser via the compile options
+* add support for other known style extensions (less, styl, sass, scss)
+
 # 3.6.2
 
 * fix Node 4 support
