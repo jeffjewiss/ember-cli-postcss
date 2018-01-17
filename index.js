@@ -12,6 +12,7 @@ const PostcssCompiler = require('broccoli-postcss-single')
 function PostcssPlugin (addon) {
   this.name = 'ember-cli-postcss'
   this.addon = addon
+  this.ext = ['css', 'less', 'styl', 'scss', 'sass']
 }
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
