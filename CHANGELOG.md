@@ -1,5 +1,10 @@
 # master
 
+# 3.7.1
+
+* fix `this.options` collision
+* fix babel devDependencies deprecation
+
 # 3.7.0
 
 * add support for using a custom postcss parser via the compile options
