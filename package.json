@@ -38,6 +38,7 @@
     "broccoli-merge-trees": "2.0.0",
     "broccoli-postcss": "3.5.2",
     "broccoli-postcss-single": "1.6.0",
+    "ember-cli-babel": "6.11.0",
     "merge": "1.2.0"
   },
   "keywords": [
@@ -66,7 +67,6 @@
     "broccoli-asset-rev": "^2.4.2",
     "ember-cli": "^2.14.0",
     "ember-cli-app-version": "^3.0.0",
-    "ember-cli-babel": "^6.7.1",
     "ember-cli-dependency-checker": "^2.0.1",
     "ember-cli-deploy": "^1.0.1",
     "ember-cli-deploy-build": "^1.1.0",
