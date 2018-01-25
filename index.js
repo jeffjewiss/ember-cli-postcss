@@ -18,7 +18,7 @@ function PostcssPlugin (addon) {
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
   let inputTrees = [tree]
   let defaultOptions = { enabled: true }
-  let options = merge.recursive(defaultOptions, this.addon.options.compile, inputOptions)
+  let options = merge.recursive(defaultOptions, this.addon._options.compile, inputOptions)
 
   if (!options.enabled) {
     return tree
@@ -50,7 +50,7 @@ module.exports = {
     let browsers = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
-    this.options = merge.recursive({}, {
+    this._options = merge.recursive({}, {
       compile: {
         enabled: true,
         browsers,
@@ -92,8 +92,8 @@ module.exports = {
   },
 
   postprocessTree (type, tree) {
-    if (this.options.filter.enabled && (type === 'all' || type === 'styles')) {
-      tree = mergeTrees([tree, postcssFilter(tree, this.options.filter)], { overwrite: true })
+    if (this._options.filter.enabled && (type === 'all' || type === 'styles')) {
+      tree = mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
     }
     return tree
   },
