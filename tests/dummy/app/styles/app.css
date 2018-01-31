@@ -28,3 +28,11 @@ pre.prettyprint {
   line-height: 1.5;
   overflow-x: auto;
 }
+
+p > code {
+  background: #e2e2e2;
+  white-space: nowrap;
+  padding: 1px 4px;
+  border-radius: 2px;
+  color: #000;
+}
