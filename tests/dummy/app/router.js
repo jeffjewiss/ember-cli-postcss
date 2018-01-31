@@ -1,7 +1,8 @@
 import Router from 'ember-router'
+import RouterScroll from 'ember-router-scroll'
 import config from './config/environment'
 
-const MyRouter = Router.extend({
+const MyRouter = Router.extend(RouterScroll, {
   location: config.locationType,
   rootURL: config.rootURL
 })
