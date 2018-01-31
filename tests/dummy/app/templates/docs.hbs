@@ -1,13 +1,13 @@
 <header class="w-100 pv5 mt4">
   <div class="flex flex-column items-center mb5 mw7 center ph3">
-    <h1 class="f1 mb0 tc navy">Documentation</h1>
-    <h2 class="f4 normal gray tc">Detailed explanations of the configuration options for advanced usage of the addon.</h2>
+    <h1 class="f1 mb0 tc navy lato">Documentation</h1>
+    <h2 class="f4 normal gray tc lato">Detailed explanations of the configuration options for advanced usage of the addon.</h2>
   </div>
 </header>
 
 <section class="w-100 pv5 bt b--black-10">
   <div class="mw7 center ph3">
-    <h3 class="f2 near-black mt2">Overview</h3>
+    <h3 class="f2 near-black mt2 lato">Overview</h3>
     <p class="lh-copy">There are many ways to configure Postcss with your app or addon. This documentation serves as an explanation for the different types of stylesheet processing and a reference for all the available options.</p>
     <p class="lh-copy">Currently, this addon only affects the build step of your application. Other functionality is planned, but not yet released.</p>
   </div>
@@ -15,7 +15,7 @@
 
 <section class="w-100 pv5 bt b--black-10">
   <div class="mw7 center ph3">
-    <h3 class="f2 near-black mt2">Compile vs. Filter</h3>
+    <h3 class="f2 near-black mt2 lato">Compile vs. Filter</h3>
     <p class="lh-copy">One source of confusion when using this addon is figuring out which of the modes to use and why the two are configurable separately.</p>
     <p class="lh-copy">These two options exist due to how <strong>ember-cli</strong> processes an application and the hooks it makes available. You can only use one CSS processor to <strong>compile</strong> your styles because it uses the <code>toTree</code> hook of an Ember Addon, which transforms your styles, and in many cases, removes it from the tree of available files and then writing a corresponding CSS file to the tree. An example would be if you're using Sass this step would remove <code>app-name.scss</code> from the tree and after processing write <code>app-name.css</code>.</p>
     <p class="lh-copy">With this in mind, the general rule is that if you would like to use Postcss as your main processor for your stylesheets, use <strong>compile</strong> and if you would like to run Postcss after another processor or on all of your styles, including files added by addons or through vendor, then use <strong>filter</strong>.</p>
@@ -24,40 +24,40 @@
 
 <section class="w-100 pv5 bg-washed-green bt b--black-10">
   <div class="mw7 center ph3">
-    <h3 class="f2 near-black mt2">All Available Options</h3>
+    <h3 class="f2 near-black mt2 lato">All Available Options</h3>
 
-    <h4 class="f3 dark-green mb0">Compile</h4>
+    <h4 class="f3 dark-green mb0 lato">Compile</h4>
     <p class="gray">type: <code>object</code> default: <code>see below</code></p>
     <p>An options object to be passed to the broccoli-postcss-single compiler.</p>
 
     <div class="pl3 bl b--dark-green">
 
-      <h5 class="f4 mb0 mt4">enabled</h5>
+      <h5 class="f4 mb0 mt4 lato">enabled</h5>
       <p class="gray">type: <code>boolean</code> default: <code>true</code></p>
       <p>Controls if this stage of the processing is run.</p>
 
-      <h5 class="f4 mb0 mt4">map</h5>
+      <h5 class="f4 mb0 mt4 lato">map</h5>
       <p class="gray">type: <code>boolean | string | object</code> default: <code>"inline"</code> and <code>false</code> in production</p>
       <p>The options that are passed to postcss via broccoli-postcss-single as to how source maps should be rendered.</p>
 
-      <h5 class="f4 mb0 mt4">browsers</h5>
+      <h5 class="f4 mb0 mt4 lato">browsers</h5>
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>This should be a valid list of <a class="link blue" href="https://github.com/ai/browserslist">browsers</a> to share between plugins. If your app has a <strong>targets.js</strong> config file they will be pulled from there. Specifying this option will override the config file.</p>
 
-      <h5 class="f4 mb0 mt4">parser</h5>
+      <h5 class="f4 mb0 mt4 lato">parser</h5>
       <p class="gray">type: <code>function</code> default: <code>undefined</code></p>
       <p>This is an optional setting allowing you to specify a custom parsers, different than the default Postcss parser. Use this if you’d like to parse a different syntax, such as Sass or Sugarcss, by passing in a custom function or node module reference.</p>
 
-      <h5 class="f4 mb0 mt4">extension</h5>
+      <h5 class="f4 mb0 mt4 lato">extension</h5>
       <p class="gray">type: <code>string</code> default: <code>"css"</code></p>
       <p>Use this option if your main application stylesheet is using an extension other than css.</p>
 
-      <h5 class="f4 mb0 mt4">plugins</h5>
+      <h5 class="f4 mb0 mt4 lato">plugins</h5>
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>A list of Postcss plugins to be applied to the stylesheets defined in your applications outputPaths.</p>
       <p>There are two supported methods for defining plugins:</p>
       <ol class="list ma0 pa0">
-        <li>1. Object form
+        <li class="pb2">1. Object form
           <pre class="prettyprint lang-js lh-copy"><code>plugins: [
     {
       module: require('some-plugin'),
@@ -65,7 +65,7 @@
     }
   ]</code></pre>
         </li>
-        <li>2. Function form
+        <li class="pb2">2. Function form
           <pre class="prettyprint lang-js lh-copy"><code>plugins: [
     require('some-plugin')({ /* options for `some-plugin` */ }),
     require('another-plugin')({ /* options for `another-plugin` */ }),
@@ -75,22 +75,22 @@
 
     </div>
 
-    <h4 class="f3 dark-green mb0">Filter</h4>
+    <h4 class="f3 dark-green mb0 lato">Filter</h4>
     <p class="gray">type: <code>object</code> default: <code>see below</code></p>
     <p>An options object to be passed to the broccoli-postcss processor.</p>
     <p><em>Please note, these options are passed on to each plugin and merged with the options defined in the plugins array. In many cases, such as browser targets, this allows them to be defined in one place.</em></p>
 
     <div class="pl3 bl b--dark-green">
 
-      <h5 class="f4 mb0 mt4">enabled</h5>
+      <h5 class="f4 mb0 mt4 lato">enabled</h5>
       <p class="gray">type: <code>boolean</code> default: <code>false</code></p>
       <p>Controls if this stage of the processing is run.</p>
 
-      <h5 class="f4 mb0 mt4">map</h5>
+      <h5 class="f4 mb0 mt4 lato">map</h5>
       <p class="gray">type: <code>boolean | string | object</code> default: <code>"inline"</code></p>
       <p>The options that are passed to postcss via broccoli-postcss-single as to how source maps should be rendered.</p>
 
-      <h5 class="f4 mb0 mt4">include</h5>
+      <h5 class="f4 mb0 mt4 lato">include</h5>
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>Array of GlobStrings|RegExps|Functions to describe a whitelist of files to get processed by Postcss.</p>
 
@@ -98,16 +98,16 @@
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>Array of GlobStrings|RegExps|Functions to describe a blacklist of files to be ignored by Postcss.</p>
 
-      <h5 class="f4 mb0 mt4">browsers</h5>
+      <h5 class="f4 mb0 mt4 lato">browsers</h5>
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>This should be a valid list of <a class="link blue" href="https://github.com/ai/browserslist">browsers</a> to share between plugins. If your app has a <strong>targets.js</strong> config file they will be pulled from there. Specifying this option will override the config file.</p>
 
-      <h5 class="f4 mb0 mt4">plugins</h5>
+      <h5 class="f4 mb0 mt4 lato">plugins</h5>
       <p class="gray">type: <code>array</code> default: <code>[]</code></p>
       <p>A list of Postcss plugins to be applied to the stylesheets defined in your applications outputPaths.</p>
       <p>There are two supported methods for defining plugins:</p>
       <ol class="list ma0 pa0">
-        <li>1. Object form
+        <li class="pb2">1. Object form
           <pre class="prettyprint lang-js lh-copy"><code>plugins: [
     {
       module: require('some-plugin'),
@@ -115,7 +115,7 @@
     }
   ]</code></pre>
         </li>
-        <li>2. Function form
+        <li class="pb2">2. Function form
           <pre class="prettyprint lang-js lh-copy"><code>plugins: [
     require('some-plugin')({ /* options for `some-plugin` */ }),
     require('another-plugin')({ /* options for `another-plugin` */ }),

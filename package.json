@@ -90,6 +90,7 @@
     "ember-resolver": "^4.0.0",
     "ember-router-scroll": "0.4.0",
     "ember-source": "^2.16.2",
+    "ember-typeface": "0.2.0",
     "eslint": "^4.1.1",
     "eslint-config-standard": "^10.2.0",
     "eslint-plugin-ember-suave": "^1.0.0",
@@ -104,6 +105,8 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "11.0.0",
     "prember": "0.2.2",
-    "tachyons": "^4.7.4"
+    "tachyons": "^4.7.4",
+    "typeface-lato": "0.0.54",
+    "typeface-oxygen": "0.0.54"
   }
 }

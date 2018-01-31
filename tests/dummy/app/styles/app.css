@@ -36,3 +36,12 @@ p > code {
   border-radius: 2px;
   color: #000;
 }
+
+/* Fonts */
+.oxygen {
+  font-family: "Oxygen";
+}
+
+.lato {
+  font-family: "Lato";
+}
