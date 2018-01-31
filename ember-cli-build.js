@@ -4,6 +4,15 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon')
 
 module.exports = function (defaults) {
   let app = new EmberAddon(defaults, {
+    prember: {
+      // GitHub Pages uses this filename to serve 404s
+      emptyFile: '404.html',
+      urls: [
+        '/',
+        '/docs',
+        '/library'
+      ]
+    },
     outputPaths: {
       app: {
         css: {

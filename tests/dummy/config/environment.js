@@ -21,6 +21,9 @@ module.exports = function (environment) {
     },
     'ember-code-prettify': {
       skin: ''
+    },
+    fastboot: {
+      hostWhitelist: ['localhost:4200', 'jeffjewiss.github.io']
     }
   }
 
