@@ -222,3 +222,39 @@ Your configuration options in `ember-cli-build.js` would contain the following o
 This allows your to switch your CSS processing pipeline to use postcss without being hugely disruptive as you can keep the Sass features and `.scss` or `.sass` file extension. The importing feature of `@csstools/postcss-sass` will also look for `.css` files, so you can choose to gradually rename your files from Sass partials `_<filename>.scss` to `<filename>.css` without breaking anything.
 
 If your goal is to completely move away from using Sass features you can remove the parser, remove the sass plugin, use an import plugin that fits your needs and ensure that your files have the `.css` extension.
+
+Experimental Features
+---------------------
+
+### Custom Properties Service
+
+CSS variables are now supported by many major browsers. The values of these variables can be accessed, set, and removed using JavaScript. This addon now exports a service, which provides methods to work with CSS variables. Each method is a wrapper around the browser API, which includes a check for browser support before executing.
+
+The service provides 3 methods:
+
+1. `getVal ({ element = docEl, variableName })`
+2. `setVal ({ element = docEl, variableName, variableValue })`
+3. `removeVal ({ element = docEl, variableName })`
+
+A Contrived Example: 
+
+```javascript
+import { inject } from '@ember/service'
+
+export default <ember object>.extend({
+  customProperties: inject(),
+  ...
+
+  nightMode() {
+    this.get('customProperties').setVal({variableName: '--background', variableValue: 'black'})
+    this.get('customProperties').setVal({variableName: '--text', variableValue: 'white'})
+  },
+
+  dayMode() {
+    this.get('customProperties').setVal({variableName: '--background', variableValue: 'white'})
+    this.get('customProperties').setVal({variableName: '--text', variableValue: 'black'})
+  },
+})
+```
+
+*Note: if you are using postcss-custom-properties, ensure you configure the option `{ preserve: true }`*
