@@ -16,7 +16,7 @@
     "lint:fix": "eslint app addon config server test-support tests *.js --fix"
   },
   "engines": {
-    "node": ">= 4.8"
+    "node": ">= 6.9"
   },
   "files": [
     "blueprints",
