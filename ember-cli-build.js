@@ -26,7 +26,11 @@ module.exports = function (defaults) {
       compile: {
         plugins: [
           { module: require('postcss-import') },
-          { module: require('postcss-cssnext') }
+          {
+            module: require('postcss-custom-properties'),
+            options: { preserve: true }
+          },
+          { module: require('postcss-nesting') }
         ]
       },
       filter: {
