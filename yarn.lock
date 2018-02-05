@@ -2753,7 +2753,7 @@ ember-router-generator@^1.0.0, ember-router-generator@^1.2.3:
   dependencies:
     recast "^0.11.3"
 
-ember-router-scroll@0.4.0:
+ember-router-scroll@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npmjs.org/ember-router-scroll/-/ember-router-scroll-0.4.0.tgz#df833738471bc854c76fc8620853563f275e649f"
   dependencies:
@@ -2806,9 +2806,9 @@ ember-try@^0.2.15:
     rsvp "^3.0.17"
     semver "^5.1.0"
 
-ember-typeface@0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/ember-typeface/-/ember-typeface-0.2.0.tgz#047fdc8156a28336c4a86413b0e993e20d97fcb5"
+ember-typeface@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.npmjs.org/ember-typeface/-/ember-typeface-0.3.0.tgz#067c0fac5c023a96aa6e0bbcb194f2c2d86b6bfc"
   dependencies:
     deepmerge "2.0.1"
     detect-installed "2.0.4"
@@ -2936,14 +2936,14 @@ eslint-plugin-import@^2.6.0:
     minimatch "^3.0.3"
     read-pkg-up "^2.0.0"
 
-eslint-plugin-node@^5.0.0:
-  version "5.2.1"
-  resolved "https://registry.npmjs.org/eslint-plugin-node/-/eslint-plugin-node-5.2.1.tgz#80df3253c4d7901045ec87fa660a284e32bdca29"
+eslint-plugin-node@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.npmjs.org/eslint-plugin-node/-/eslint-plugin-node-6.0.0.tgz#5ad5ee6b5346aec6cc9cde0b8619caed2c6d8f25"
   dependencies:
     ignore "^3.3.6"
     minimatch "^3.0.4"
     resolve "^1.3.3"
-    semver "5.3.0"
+    semver "^5.4.1"
 
 eslint-plugin-promise@^3.5.0:
   version "3.6.0"
@@ -6494,10 +6494,6 @@ sane@^2.2.0:
 "semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.1.1, semver@^5.3.0, semver@^5.4.1:
   version "5.4.1"
   resolved "https://registry.npmjs.org/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
-
-semver@5.3.0:
-  version "5.3.0"
-  resolved "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
 semver@^4.3.1:
   version "4.3.6"
