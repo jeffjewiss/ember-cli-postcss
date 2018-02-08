@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://jeffjewiss.github.io/ember-cli-postcss/postcss.svg">
+  <img src="tests/dummy/public/postcss.svg" alt="Postcss Logo">
 </div>
 
 <h1 align="center">Ember CLI Postcss</h1>
