@@ -14,10 +14,6 @@ install:
   - appveyor-retry yarn
   - appveyor-retry yarn global add bower
 
-cache:
-  - '%LOCALAPPDATA%\Yarn'
-  - '%APPDATA%\Roaming\bower'
-
 # Post-install test scripts.
 test_script:
   # Output useful info for debugging.
