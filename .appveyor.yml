@@ -1,6 +1,4 @@
 # https://www.appveyor.com/docs/appveyor-yml/
-platform:
-- x64
 
 # Test against these versions of Node.js.
 environment:
@@ -28,7 +26,8 @@ test_script:
   - npm --version
   - yarn --version
   - which yarn
-  - cmd: yarn test
+  - yarn lint
+  - yarn test
 
 # Don't actually build.
 build: off

@@ -10,8 +10,8 @@
     "build": "ember build",
     "start": "ember server",
     "deploy": "ember deploy production",
-    "test": "npm run lint && ember try:each",
-    "test:appveyor": "ember test",
+    "test": "ember test",
+    "test:all": "ember try:each",
     "lint": "eslint app addon config server test-support tests *.js",
     "lint:fix": "eslint app addon config server test-support tests *.js --fix"
   },
