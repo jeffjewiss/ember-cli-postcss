@@ -2,7 +2,6 @@
 
 # Test against these versions of Node.js.
 environment:
-  MOCHA_REPORTER: "mocha-appveyor-reporter"
   matrix:
     - nodejs_version: "6"
     - nodejs_version: "8"
@@ -14,11 +13,10 @@ install:
   - appveyor-retry npm i -g npm@^5
   - appveyor-retry yarn
   - appveyor-retry yarn global add bower
-  - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
-
 
 cache:
   - '%LOCALAPPDATA%\Yarn'
+  - '%APPDATA%\Roaming\bower'
 
 # Post-install test scripts.
 test_script:
@@ -28,7 +26,7 @@ test_script:
   - npm --version
   - yarn --version
   - which yarn
-  - yarn test
+  - cmd: yarn test
 
 # Don't actually build.
 build: off
