@@ -1,8 +1,13 @@
 import Service from '@ember/service'
-const docEl = document ? document.documentElement : null
+const docEl = window && window.document ? window.document.documentElement : null
 
 export default Service.extend({
   getVal ({ element = docEl, variableName }) {
+    if (!element) {
+      console.error('No element provided')
+      return false
+    }
+
     if (cssVariablesSupported()) {
       if (variableName) {
         return getComputedStyle(element).getPropertyValue(variableName).trim()
@@ -16,6 +21,11 @@ export default Service.extend({
   },
 
   setVal ({ element = docEl, variableName, variableValue }) {
+    if (!element) {
+      console.error('No element provided')
+      return false
+    }
+
     if (cssVariablesSupported()) {
       if (!!variableName && !!variableValue) {
         return element.style.setProperty(variableName, variableValue)
@@ -29,6 +39,11 @@ export default Service.extend({
   },
 
   removeVal ({ element = docEl, variableName }) {
+    if (!element) {
+      console.error('No element provided')
+      return false
+    }
+
     if (cssVariablesSupported()) {
       if (variableName) {
         return element.style.removeProperty(variableName)
