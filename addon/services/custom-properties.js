@@ -54,6 +54,10 @@ export default Service.extend({
       console.debug('CSS variables are not supported')
       console.debug(`Tried to remove custom property on <${element}> with name ${variableName}`)
     }
+  },
+
+  supported () {
+    return cssVariablesSupported()
   }
 })
 
