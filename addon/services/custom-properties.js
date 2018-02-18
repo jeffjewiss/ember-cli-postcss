@@ -1,10 +1,12 @@
 import Service from '@ember/service'
+import { debug } from '@ember/debug'
+
 const docEl = window && window.document ? window.document.documentElement : null
 
 export default Service.extend({
   getVal ({ element = docEl, variableName }) {
     if (!element) {
-      console.error('No element provided')
+      debug('No element provided')
       return false
     }
 
@@ -12,17 +14,17 @@ export default Service.extend({
       if (variableName) {
         return getComputedStyle(element).getPropertyValue(variableName).trim()
       } else {
-        console.debug('No variable name provided')
+        debug('No variable name provided')
       }
     } else {
-      console.debug('CSS variables are not supported')
-      console.debug(`Tried to get custom property on <${element}> with name ${variableName}`)
+      debug('CSS variables are not supported')
+      debug(`Tried to get custom property on <${element}> with name ${variableName}`)
     }
   },
 
   setVal ({ element = docEl, variableName, variableValue }) {
     if (!element) {
-      console.error('No element provided')
+      debug('No element provided')
       return false
     }
 
@@ -30,17 +32,17 @@ export default Service.extend({
       if (!!variableName && !!variableValue) {
         return element.style.setProperty(variableName, variableValue)
       } else {
-        console.debug('Needs variable name and value to perform setVal')
+        debug('Needs variable name and value to perform setVal')
       }
     } else {
-      console.debug('CSS variables are not supported')
-      console.debug(`Tried to set custom property on <${element}> with name ${variableName} and value ${variableValue}`)
+      debug('CSS variables are not supported')
+      debug(`Tried to set custom property on <${element}> with name ${variableName} and value ${variableValue}`)
     }
   },
 
   removeVal ({ element = docEl, variableName }) {
     if (!element) {
-      console.error('No element provided')
+      debug('No element provided')
       return false
     }
 
@@ -48,11 +50,11 @@ export default Service.extend({
       if (variableName) {
         return element.style.removeProperty(variableName)
       } else {
-        console.debug('No variable name provided')
+        debug('No variable name provided')
       }
     } else {
-      console.debug('CSS variables are not supported')
-      console.debug(`Tried to remove custom property on <${element}> with name ${variableName}`)
+      debug('CSS variables are not supported')
+      debug(`Tried to remove custom property on <${element}> with name ${variableName}`)
     }
   },
 
