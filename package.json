@@ -106,7 +106,7 @@
     "postcss-custom-properties": "^7.0.0",
     "postcss-import": "^11.0.0",
     "postcss-nesting": "^4.2.1",
-    "prember": "^0.2.2",
+    "prember": "^0.3.0",
     "tachyons": "^4.7.4",
     "typeface-lato": "0.0.54",
     "typeface-oxygen": "0.0.54"
