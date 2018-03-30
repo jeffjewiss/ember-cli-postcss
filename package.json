@@ -34,12 +34,12 @@
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "broccoli-file-creator": "1.1.1",
-    "broccoli-merge-trees": "3.0.0",
-    "broccoli-postcss": "3.5.2",
-    "broccoli-postcss-single": "1.6.0",
-    "ember-cli-babel": "6.12.0",
-    "merge": "1.2.0"
+    "broccoli-file-creator": "^1.1.1",
+    "broccoli-merge-trees": "^3.0.0",
+    "broccoli-postcss": "^3.5.2",
+    "broccoli-postcss-single": "^1.6.0",
+    "ember-cli-babel": "^6.12.0",
+    "merge": "^1.2.0"
   },
   "keywords": [
     "ember-addon",
