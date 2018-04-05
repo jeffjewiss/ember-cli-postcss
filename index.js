@@ -1,7 +1,6 @@
 /* eslint-env node */
 'use strict'
 
-const path = require('path')
 const merge = require('merge')
 const version = require('./package.json').version // eslint-disable-line
 const writeFile = require('broccoli-file-creator')
@@ -31,7 +30,7 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
   let ext = options.extension || 'css'
   let paths = options.outputPaths
   let trees = Object.keys(paths).map((file) => {
-    let input = path.join(inputPath, `${file}.${ext}`)
+    let input = `${inputPath}/${file}.${ext}`
     let output = paths[file]
     return new PostcssCompiler(inputTrees, input, output, options)
   })

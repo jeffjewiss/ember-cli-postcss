@@ -4562,7 +4562,7 @@ load-json-file@^2.0.0:
     pify "^2.0.0"
     strip-bom "^3.0.0"
 
-loader.js@^4.1.0:
+loader.js@^4.6.0:
   version "4.6.0"
   resolved "https://registry.npmjs.org/loader.js/-/loader.js-4.6.0.tgz#b965663ddbe2d80da482454cb865efe496e93e22"
 
