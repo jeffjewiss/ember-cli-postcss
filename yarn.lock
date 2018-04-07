@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@ember/test-helpers@^0.7.17":
-  version "0.7.17"
-  resolved "https://registry.npmjs.org/@ember/test-helpers/-/test-helpers-0.7.17.tgz#17ff5f1d005d8b6331585e99013d66626a8d8068"
+"@ember/test-helpers@^0.7.18":
+  version "0.7.20"
+  resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.20.tgz#488b1c8ef23626f8831e5cb750ffca86e017e6dc"
   dependencies:
     broccoli-funnel "^2.0.1"
     ember-cli-babel "^6.10.0"
@@ -2511,11 +2511,11 @@ ember-cli-preprocess-registry@^3.1.0:
     silent-error "^1.0.0"
 
 ember-cli-qunit@^4.3.0:
-  version "4.3.1"
-  resolved "https://registry.npmjs.org/ember-cli-qunit/-/ember-cli-qunit-4.3.1.tgz#fcbf3585392299b27de26e57d0cf9f9049a76181"
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-qunit/-/ember-cli-qunit-4.3.2.tgz#cfd89ad3b0dbc28a9c2223d532b52eeade7c602c"
   dependencies:
     ember-cli-babel "^6.11.0"
-    ember-qunit "^3.3.1"
+    ember-qunit "^3.3.2"
 
 ember-cli-release@^0.2.9:
   version "0.2.9"
@@ -2726,11 +2726,11 @@ ember-maybe-import-regenerator@^0.1.6:
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
 
-ember-qunit@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.npmjs.org/ember-qunit/-/ember-qunit-3.3.1.tgz#8d68ef30cfd6f2acbf1d0f4e368439642e726903"
+ember-qunit@^3.3.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/ember-qunit/-/ember-qunit-3.4.0.tgz#47a60c2b889cd4b4a46380bf9da2b10115c0eae7"
   dependencies:
-    "@ember/test-helpers" "^0.7.17"
+    "@ember/test-helpers" "^0.7.18"
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
     common-tags "^1.4.0"
