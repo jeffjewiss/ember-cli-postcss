@@ -2648,8 +2648,8 @@ ember-cli-version-checker@^1.0.2:
     semver "^5.3.0"
 
 ember-cli@^3.0.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.1.0.tgz#a8988d141631533c1a47a5f22cccf510b7d07b86"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/ember-cli/-/ember-cli-3.1.1.tgz#5a4e8c068d16c4d5f24f0cc130571a3d72f0ac0e"
   dependencies:
     amd-name-resolver "^1.2.0"
     babel-plugin-transform-es2015-modules-amd "^6.24.0"
@@ -2726,7 +2726,7 @@ ember-cli@^3.0.0:
     sort-package-json "^1.4.0"
     symlink-or-copy "^1.1.8"
     temp "0.8.3"
-    testem "^2.2.0"
+    testem "^2.0.0"
     tiny-lr "^1.0.3"
     tree-sync "^1.2.1"
     uuid "^3.0.0"
@@ -7268,7 +7268,7 @@ temp@0.8.3:
     os-tmpdir "^1.0.0"
     rimraf "~2.2.6"
 
-testem@^2.2.0:
+testem@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/testem/-/testem-2.2.1.tgz#7bcda44eeb34287d918b3c8b9c6863d26a616557"
   dependencies:
