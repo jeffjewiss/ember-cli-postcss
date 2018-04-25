@@ -6080,8 +6080,8 @@ prelude-ls@~1.1.2:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
 
 prember@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/prember/-/prember-0.3.0.tgz#cc32a6a7f71535ebe7bee2351f8224cb4c1b2dd6"
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/prember/-/prember-0.3.1.tgz#2d7128a8d12eda7ac1248c81c4d3d044e4091aad"
   dependencies:
     broccoli-debug "^0.6.3"
     broccoli-merge-trees "^2.0.0"
