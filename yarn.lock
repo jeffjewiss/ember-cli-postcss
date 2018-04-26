@@ -2375,11 +2375,11 @@ ember-app-scheduler@^0.2.0:
     ember-cli-babel "^6.3.0"
 
 ember-cli-app-version@^3.0.0:
-  version "3.1.3"
-  resolved "https://registry.npmjs.org/ember-cli-app-version/-/ember-cli-app-version-3.1.3.tgz#26d25f5e653ff0106f0b39da6d75518ba8ed282d"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-app-version/-/ember-cli-app-version-3.2.0.tgz#7b9ad0e1b63ae0518648356ee24c703e922bc26e"
   dependencies:
-    ember-cli-babel "^6.8.0"
-    git-repo-version "^1.0.0"
+    ember-cli-babel "^6.12.0"
+    git-repo-version "^1.0.2"
 
 ember-cli-babel@6.12.0, ember-cli-babel@^6.12.0:
   version "6.12.0"
@@ -2409,7 +2409,7 @@ ember-cli-babel@^5.0.0:
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
-ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.10.0, ember-cli-babel@^6.11.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.0, ember-cli-babel@^6.8.1:
+ember-cli-babel@^6.0.0-beta.4, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.10.0, ember-cli-babel@^6.11.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.6.0, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.1:
   version "6.11.0"
   resolved "https://registry.npmjs.org/ember-cli-babel/-/ember-cli-babel-6.11.0.tgz#79cb184bac3c05bfe181ddc306bac100ab1f9493"
   dependencies:
@@ -3789,9 +3789,9 @@ git-repo-info@^1.4.1:
   version "1.4.1"
   resolved "https://registry.npmjs.org/git-repo-info/-/git-repo-info-1.4.1.tgz#2a072823254aaf62fcf0766007d7b6651bd41943"
 
-git-repo-version@^1.0.0:
+git-repo-version@^1.0.2:
   version "1.0.2"
-  resolved "https://registry.npmjs.org/git-repo-version/-/git-repo-version-1.0.2.tgz#2c8e9bee5d970cafc0dd58480f9dc56d9afe8e4f"
+  resolved "https://registry.yarnpkg.com/git-repo-version/-/git-repo-version-1.0.2.tgz#2c8e9bee5d970cafc0dd58480f9dc56d9afe8e4f"
   dependencies:
     git-repo-info "^1.4.1"
 
