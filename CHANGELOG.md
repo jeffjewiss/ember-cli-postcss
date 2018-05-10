@@ -1,5 +1,14 @@
 # master
 
+# 4.0.0
+
+* drop Node 4 support
+* test against Node 10
+* use version ranges for dependencies
+* use new testing API
+* add a service for using CSS variables in javascript
+* add a documentation website using the dummy app
+
 # 3.7.1
 
 * fix `this.options` collision
