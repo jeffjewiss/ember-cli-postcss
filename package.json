@@ -12,11 +12,16 @@
     "deploy": "ember deploy production",
     "test": "npm run lint && ember try:each",
     "test:appveyor": "ember test",
-    "lint": "eslint app addon config server test-support tests *.js",
-    "lint:fix": "eslint app addon config server test-support tests *.js --fix"
+    "lint": "eslint ./*.js app addon config server test-support tests",
+    "lint:fix": "./*.js eslint app addon config server test-support tests --fix"
   },
   "engines": {
     "node": ">= 6.9"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   },
   "files": [
     "blueprints",
@@ -99,6 +104,7 @@
     "eslint-plugin-node": "^6.0.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.0",
+    "husky": "1.0.0-rc.4",
     "loader.js": "^4.1.0",
     "minimatch": "^3.0.0",
     "postcss-color-function": "4.0.1",
