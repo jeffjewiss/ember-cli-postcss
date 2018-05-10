@@ -36,7 +36,7 @@
   "dependencies": {
     "broccoli-file-creator": "^2.1.1",
     "broccoli-merge-trees": "^3.0.0",
-    "broccoli-postcss": "^3.5.2",
+    "broccoli-postcss": "^3.5.3",
     "broccoli-postcss-single": "^1.6.0",
     "ember-cli-babel": "^6.12.0",
     "merge": "^1.2.0"

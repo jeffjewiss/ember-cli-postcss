@@ -1466,9 +1466,9 @@ broccoli-postcss-single@^1.6.0:
     object-assign "4.1.1"
     postcss "6.0.16"
 
-broccoli-postcss@^3.5.2:
+broccoli-postcss@^3.5.3:
   version "3.5.3"
-  resolved "https://registry.yarnpkg.com/broccoli-postcss/-/broccoli-postcss-3.5.3.tgz#bfbb12531d8c774d23651b462c3ed23f0227a8e8"
+  resolved "https://registry.npmjs.org/broccoli-postcss/-/broccoli-postcss-3.5.3.tgz#bfbb12531d8c774d23651b462c3ed23f0227a8e8"
   dependencies:
     broccoli-funnel "2.0.1"
     broccoli-persistent-filter "1.4.3"
