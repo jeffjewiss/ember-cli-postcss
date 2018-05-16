@@ -2850,8 +2850,8 @@ ember-router-generator@^1.2.3:
     recast "^0.11.3"
 
 ember-router-scroll@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/ember-router-scroll/-/ember-router-scroll-0.6.0.tgz#e94fda377bd00c45d866123ec6dcf05654d4d987"
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/ember-router-scroll/-/ember-router-scroll-0.6.1.tgz#a3a48112635d8da840a192ffe43adc3144e46a37"
   dependencies:
     ember-app-scheduler "^0.2.0"
     ember-cli-babel "^6.6.0"
