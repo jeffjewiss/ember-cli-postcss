@@ -2936,11 +2936,12 @@ ember-source-channel-url@^1.0.1:
     got "^8.0.1"
 
 ember-source@^3.0.0:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.1.2.tgz#3c25e63f1e4ff2b83bb3fbfb350625de2a1a521f"
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/ember-source/-/ember-source-3.2.0.tgz#24560bfdf31aa26924f47c2819be8cd4345b5a28"
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
+    chalk "^2.3.0"
     ember-cli-get-component-path-option "^1.0.0"
     ember-cli-is-package-missing "^1.0.0"
     ember-cli-normalize-entity-name "^1.0.0"
@@ -2951,7 +2952,7 @@ ember-source@^3.0.0:
     ember-router-generator "^1.2.3"
     inflection "^1.12.0"
     jquery "^3.3.1"
-    resolve "^1.5.0"
+    resolve "^1.6.0"
 
 ember-try-config@^2.2.0:
   version "2.2.0"
