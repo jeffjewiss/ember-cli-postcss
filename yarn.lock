@@ -7412,8 +7412,8 @@ table@4.0.2:
     string-width "^2.1.1"
 
 tachyons@^4.7.4:
-  version "4.9.1"
-  resolved "https://registry.npmjs.org/tachyons/-/tachyons-4.9.1.tgz#f88d7059d6e53c833bf9351a26f18314c8fdc76a"
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/tachyons/-/tachyons-4.10.0.tgz#87fa088e88d9759983f2a1b0efd01d767bbef87b"
 
 tap-parser@^5.1.0:
   version "5.4.0"
