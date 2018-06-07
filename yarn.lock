@@ -1263,17 +1263,6 @@ broccoli-builder@^0.18.8:
     rsvp "^3.0.17"
     silent-error "^1.0.1"
 
-broccoli-caching-writer@3.0.3, broccoli-caching-writer@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.npmjs.org/broccoli-caching-writer/-/broccoli-caching-writer-3.0.3.tgz#0bd2c96a9738d6a6ab590f07ba35c5157d7db476"
-  dependencies:
-    broccoli-kitchen-sink-helpers "^0.3.1"
-    broccoli-plugin "^1.2.1"
-    debug "^2.1.1"
-    rimraf "^2.2.8"
-    rsvp "^3.0.17"
-    walk-sync "^0.3.0"
-
 broccoli-caching-writer@^2.2.0:
   version "2.3.1"
   resolved "https://registry.npmjs.org/broccoli-caching-writer/-/broccoli-caching-writer-2.3.1.tgz#b93cf58f9264f003075868db05774f4e7f25bd07"
@@ -1284,6 +1273,17 @@ broccoli-caching-writer@^2.2.0:
     rimraf "^2.2.8"
     rsvp "^3.0.17"
     walk-sync "^0.2.5"
+
+broccoli-caching-writer@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/broccoli-caching-writer/-/broccoli-caching-writer-3.0.3.tgz#0bd2c96a9738d6a6ab590f07ba35c5157d7db476"
+  dependencies:
+    broccoli-kitchen-sink-helpers "^0.3.1"
+    broccoli-plugin "^1.2.1"
+    debug "^2.1.1"
+    rimraf "^2.2.8"
+    rsvp "^3.0.17"
+    walk-sync "^0.3.0"
 
 broccoli-clean-css@^1.1.0:
   version "1.1.0"
@@ -1506,15 +1506,15 @@ broccoli-plugin@^1.0.0, broccoli-plugin@^1.1.0, broccoli-plugin@^1.2.0, broccoli
     rimraf "^2.3.4"
     symlink-or-copy "^1.1.8"
 
-broccoli-postcss-single@^1.6.0:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/broccoli-postcss-single/-/broccoli-postcss-single-1.6.0.tgz#da008ba24087f5cd1d7ec851d3d8921c9896a8ff"
+broccoli-postcss-single@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/broccoli-postcss-single/-/broccoli-postcss-single-2.0.0.tgz#281490d19ca81fb7611547011b3decc98b042fbd"
   dependencies:
-    broccoli-caching-writer "3.0.3"
-    include-path-searcher "0.1.0"
-    mkdirp "0.5.1"
-    object-assign "4.1.1"
-    postcss "6.0.16"
+    broccoli-caching-writer "^3.0.3"
+    include-path-searcher "^0.1.0"
+    mkdirp "^0.5.1"
+    object-assign "^4.1.1"
+    postcss "^6.0.22"
 
 broccoli-postcss@^3.5.3:
   version "3.5.3"
@@ -4316,9 +4316,9 @@ imurmurhash@^0.1.4:
   version "0.1.4"
   resolved "https://registry.npmjs.org/imurmurhash/-/imurmurhash-0.1.4.tgz#9218b9b2b928a238b13dc4fb6b6d576f231453ea"
 
-include-path-searcher@0.1.0:
+include-path-searcher@^0.1.0:
   version "0.1.0"
-  resolved "https://registry.npmjs.org/include-path-searcher/-/include-path-searcher-0.1.0.tgz#c0cf2ddfa164fb2eae07bc7ca43a7f191cb4d7bd"
+  resolved "https://registry.yarnpkg.com/include-path-searcher/-/include-path-searcher-0.1.0.tgz#c0cf2ddfa164fb2eae07bc7ca43a7f191cb4d7bd"
 
 indent-string@^2.1.0:
   version "2.1.0"
@@ -6198,15 +6198,7 @@ postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@6.0.16:
-  version "6.0.16"
-  resolved "https://registry.npmjs.org/postcss/-/postcss-6.0.16.tgz#112e2fe2a6d2109be0957687243170ea5589e146"
-  dependencies:
-    chalk "^2.3.0"
-    source-map "^0.6.1"
-    supports-color "^5.1.0"
-
-postcss@6.0.22, postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.18, postcss@^6.0.21:
+postcss@6.0.22, postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.18, postcss@^6.0.21, postcss@^6.0.22:
   version "6.0.22"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
   dependencies:
@@ -7375,12 +7367,6 @@ supports-color@^2.0.0:
 supports-color@^4.0.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/supports-color/-/supports-color-4.5.0.tgz#be7a0de484dec5c5cddf8b3d59125044912f635b"
-  dependencies:
-    has-flag "^2.0.0"
-
-supports-color@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.npmjs.org/supports-color/-/supports-color-5.1.0.tgz#058a021d1b619f7ddf3980d712ea3590ce7de3d5"
   dependencies:
     has-flag "^2.0.0"
 
