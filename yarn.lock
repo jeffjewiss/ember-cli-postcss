@@ -6188,17 +6188,17 @@ postcss-message-helpers@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/postcss-message-helpers/-/postcss-message-helpers-2.0.0.tgz#a4f2f4fab6e4fe002f0aed000478cdf52f9ba60e"
 
-postcss-nesting@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-5.0.0.tgz#973e3a7dc6426543affc0b0beb367c3b2a8d9923"
+postcss-nesting@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-6.0.0.tgz#4c45276a065765ec063efe1e4daf75c131518991"
   dependencies:
-    postcss "^6.0.21"
+    postcss "^6.0.22"
 
 postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@6.0.22, postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.18, postcss@^6.0.21, postcss@^6.0.22:
+postcss@6.0.22, postcss@^6.0.1, postcss@^6.0.14, postcss@^6.0.18, postcss@^6.0.22:
   version "6.0.22"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.22.tgz#e23b78314905c3b90cbd61702121e7a78848f2a3"
   dependencies:
