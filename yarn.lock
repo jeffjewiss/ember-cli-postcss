@@ -2445,9 +2445,9 @@ electron-to-chromium@^1.3.47:
   version "1.3.48"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.48.tgz#d3b0d8593814044e092ece2108fc3ac9aea4b900"
 
-ember-app-scheduler@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ember-app-scheduler/-/ember-app-scheduler-0.2.2.tgz#e4a66275d1789d1b054815ee230c6f759b4b75eb"
+ember-app-scheduler@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ember-app-scheduler/-/ember-app-scheduler-1.0.1.tgz#cc25e79d139525e440f2b26bcf8fdd60a3899878"
   dependencies:
     ember-cli-babel "^6.3.0"
 
@@ -2922,10 +2922,10 @@ ember-router-generator@^1.2.3:
     recast "^0.11.3"
 
 ember-router-scroll@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/ember-router-scroll/-/ember-router-scroll-0.7.0.tgz#3b56e70efc45ba90e74ee3eb729815489630196c"
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/ember-router-scroll/-/ember-router-scroll-0.7.1.tgz#0fc4b9be116ef97ce974938104cc766f4e56a127"
   dependencies:
-    ember-app-scheduler "^0.2.2"
+    ember-app-scheduler "^1.0.1"
     ember-cli-babel "^6.6.0"
     ember-getowner-polyfill "^2.0.1"
 
