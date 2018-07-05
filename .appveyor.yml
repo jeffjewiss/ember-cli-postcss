@@ -8,15 +8,13 @@ environment:
       platform: x86
     - nodejs_version: "8"
       platform: x86
-    - nodejs_version: "9"
-      platform: x86
     - nodejs_version: "10"
       platform: x86
 
 # Install scripts. (runs after repo cloning)
 install:
   - ps: Install-Product node $env:nodejs_version
-  - appveyor-retry npm i -g npm@^5
+  - appveyor-retry npm i -g npm@^6
   - appveyor-retry yarn
   - appveyor-retry yarn global add bower
   - appveyor-retry yarn add mocha-appveyor-reporter # must be installed locally.
