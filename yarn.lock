@@ -7206,11 +7206,11 @@ postcss-color-gray@^4.0.0:
     reduce-function-call "^1.0.2"
 
 postcss-custom-properties@^8.0.0:
-  version "8.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.0.tgz#1834fb111161e7c7cdc9589185e0b4cac4fa67c1"
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.3.tgz#5c8f398ed3296b782a087c72fc53bda9e8ef70fb"
   dependencies:
     postcss "^7.0.2"
-    postcss-values-parser "^1.5.0"
+    postcss-values-parser "^2.0.0"
 
 postcss-import@^12.0.0:
   version "12.0.0"
@@ -7235,9 +7235,9 @@ postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss-values-parser@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/postcss-values-parser/-/postcss-values-parser-1.5.0.tgz#5d9fa63e2bcb0179ce48f3235303765eb89f3047"
+postcss-values-parser@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-values-parser/-/postcss-values-parser-2.0.0.tgz#1ba42cae31367c44f96721cb5eb99462bfb39705"
   dependencies:
     flatten "^1.0.2"
     indexes-of "^1.0.1"
