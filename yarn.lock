@@ -7225,11 +7225,11 @@ postcss-message-helpers@^2.0.0:
   version "2.0.0"
   resolved "https://registry.npmjs.org/postcss-message-helpers/-/postcss-message-helpers-2.0.0.tgz#a4f2f4fab6e4fe002f0aed000478cdf52f9ba60e"
 
-postcss-nesting@^6.0.0:
-  version "6.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-6.0.0.tgz#4c45276a065765ec063efe1e4daf75c131518991"
+postcss-nesting@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-nesting/-/postcss-nesting-7.0.0.tgz#6e26a770a0c8fcba33782a6b6f350845e1a448f6"
   dependencies:
-    postcss "^6.0.22"
+    postcss "^7.0.2"
 
 postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
