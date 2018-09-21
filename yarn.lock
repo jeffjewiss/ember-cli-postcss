@@ -7206,8 +7206,8 @@ postcss-color-gray@^4.0.0:
     reduce-function-call "^1.0.2"
 
 postcss-custom-properties@^8.0.0:
-  version "8.0.3"
-  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.3.tgz#5c8f398ed3296b782a087c72fc53bda9e8ef70fb"
+  version "8.0.5"
+  resolved "https://registry.yarnpkg.com/postcss-custom-properties/-/postcss-custom-properties-8.0.5.tgz#e78a7bd813196332db9dface66a528ae5da8b98f"
   dependencies:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
