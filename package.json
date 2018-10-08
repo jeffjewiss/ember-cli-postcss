@@ -11,9 +11,7 @@
     "start": "ember server",
     "deploy": "ember deploy production",
     "test": "npm run lint && ember try:each",
-    "test:appveyor": "ember test",
-    "lint": "eslint ./*.js app addon config server test-support tests",
-    "lint:fix": "./*.js eslint app addon config server test-support tests --fix"
+    "lint": "eslint ."
   },
   "engines": {
     "node": ">= 6.9"

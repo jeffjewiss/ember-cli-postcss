@@ -24,6 +24,7 @@ module.exports = {
         'index.js',
         'testem.js',
         'ember-cli-build.js',
+        'blueprints/*.js',
         'config/**/*.js',
         'tests/dummy/config/**/*.js'
       ],
@@ -34,16 +35,12 @@ module.exports = {
       ],
       parserOptions: {
         sourceType: 'script',
-        ecmaVersion: 2015
+        ecmaVersion: 2017
       },
       env: {
         browser: false,
         node: true
-      },
-      plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-      })
+      }
     }
   ]
 };
