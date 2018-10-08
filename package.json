@@ -14,7 +14,8 @@
     "lint": "eslint ."
   },
   "engines": {
-    "node": ">= 6.9"
+    "node": ">= 6.9",
+    "yarn": "YARN NO LONGER USED - use npm instead."
   },
   "husky": {
     "hooks": {
