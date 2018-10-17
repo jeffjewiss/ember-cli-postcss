@@ -67,7 +67,12 @@ module.exports = {
       }
     }, this._getAddonOptions(app).postcssOptions)
 
-    this.import('vendor/ember-cli-postcss/register-version.js')
+    let isEmber = !!~app.constructor.name.indexOf('Ember')
+    // Omit the register version import for glimmer apps.
+    // For some reason this causes a crash in glimmer.
+    if (isEmber) {
+      this.import('vendor/ember-cli-postcss/register-version.js')
+    }
   },
 
   _getAddonOptions (app) {

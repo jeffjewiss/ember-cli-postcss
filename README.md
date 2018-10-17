@@ -38,6 +38,8 @@ The add-on can be used in two ways:
 
 *Note: it’s possible to use both compile and filter.*
 
+*Additional Note: this app is compatible with Glimmer JS*
+
 #### Compile
 
 This step will look for either `app.css` or `<project-name>.css` in your styles directory. Additional files to be processed can be defined in the output paths configuration object for your application:
