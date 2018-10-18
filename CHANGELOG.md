@@ -1,5 +1,9 @@
 # master
 
+# 4.1.1
+
+* adds a fix for GlimmerJS support
+
 # 4.1.0
 
 * stop testing against Ember 2
