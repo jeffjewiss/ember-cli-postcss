@@ -1,5 +1,11 @@
 # master
 
+# 4.1.0
+
+* stop testing against Ember 2
+* remove Yarn
+* upgrade to Postcss v7
+
 # 4.0.0
 
 * drop Node 4 support
