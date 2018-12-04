@@ -17,7 +17,7 @@ module('Acceptance | Application', function (hooks) {
 
     assert.equal(currentRouteName(), 'test', 'On the index page')
     assert.equal(findAll('#test-title').length, 1, 'Page contains a header title')
-    assert.equal(getCssProperty('test-title', 'color'), 'rgb(10, 10, 10)', 'postcss-color-gray has run on title')
+    assert.equal(getCssProperty('test-title', 'color'), 'rgb(27, 27, 27)', 'postcss-color-gray has run on title')
     assert.equal(getCssProperty('test-paragraph', 'color'), 'rgb(255, 0, 0)', 'postcss-color-gray has run on paragraph')
   })
 
