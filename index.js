@@ -63,6 +63,7 @@ module.exports = {
         enabled: false,
         browsers,
         map: env !== 'development' ? false : {},
+        processTrees: ['all', 'styles'],
         plugins: []
       }
     }, this._getAddonOptions(app).postcssOptions)
@@ -97,10 +98,13 @@ module.exports = {
   },
 
   postprocessTree (type, tree) {
-    if (this._options.filter.enabled && (type === 'all' || type === 'styles')) {
-      tree = mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
+    let { enabled, processTrees } = this._options.filter
+
+    if (!enabled) return tree
+
+    if (processTrees.includes(type)) {
+      return mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
     }
-    return tree
   },
 
   setupPreprocessorRegistry (type, registry) {
