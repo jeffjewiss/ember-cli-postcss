@@ -100,11 +100,11 @@ module.exports = {
   postprocessTree (type, tree) {
     let { enabled, processTrees } = this._options.filter
 
-    if (!enabled) return tree
-
-    if (processTrees.includes(type)) {
-      return mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
+    if (enabled && processTrees.includes(type)) {
+      tree = mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
     }
+
+    return tree
   },
 
   setupPreprocessorRegistry (type, registry) {
