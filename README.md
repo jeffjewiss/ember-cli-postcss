@@ -97,7 +97,7 @@ postcssOptions: {
     browsers: ['last 3 versions'], // this will override config found in config/targets.js
     include: ['styles/*.css'],
     exclude: ['vendor/bootstrap/**/*'],
-    processTrees: ['all', 'css],
+    processTrees: ['all', 'css'],
     plugins: [
       {
         module: <module>,
