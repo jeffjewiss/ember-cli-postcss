@@ -1,5 +1,9 @@
 # master
 
+# 4.2.0
+
+* adds processTrees option to filter
+
 # 4.1.1
 
 * adds a fix for GlimmerJS support
