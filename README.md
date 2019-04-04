@@ -160,7 +160,7 @@ If you are a developing an addon and would like to use `ember-cli-postcss` to pr
 ```javascript
 // index.js
 const CssImport = require('postcss-import')
-const CssNext = require('postcss-cssnext')
+const PresetEnv = require('postcss-preset-env');
 
 module.exports = {
   options: {
@@ -169,7 +169,7 @@ module.exports = {
         enabled: true,
         plugins: [
           { module: CssImport },
-          { module: CssNext }
+          { module: PresetEnv({ stage: 3 }) }
         ]
       }
     }
