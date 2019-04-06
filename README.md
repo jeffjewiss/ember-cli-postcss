@@ -169,7 +169,10 @@ module.exports = {
         enabled: true,
         plugins: [
           { module: CssImport },
-          { module: PresetEnv({ stage: 3 }) }
+          { 
+            module: PresetEnv,
+            options: { stage: 3 }
+          }
         ]
       }
     }
