@@ -47,13 +47,13 @@ module.exports = {
     this._ensureThisImport()
 
     let env = process.env.EMBER_ENV
-    let browsers = this.project.targets && this.project.targets.browsers
+    let overrideBrowserslist = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
     this._options = merge.recursive({}, {
       compile: {
         enabled: true,
-        browsers,
+        overrideBrowserslist,
         map: env !== 'development' ? false : {},
         plugins: [],
         inputFile: 'app.css',
@@ -61,7 +61,7 @@ module.exports = {
       },
       filter: {
         enabled: false,
-        browsers,
+        overrideBrowserslist,
         map: env !== 'development' ? false : {},
         processTrees: ['css'],
         plugins: []
