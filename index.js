@@ -63,7 +63,7 @@ module.exports = {
         enabled: false,
         browsers,
         map: env !== 'development' ? false : {},
-        processTrees: ['all', 'css'],
+        processTrees: ['css'],
         plugins: []
       }
     }, this._getAddonOptions(app).postcssOptions)

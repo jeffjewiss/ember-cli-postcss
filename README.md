@@ -97,7 +97,7 @@ postcssOptions: {
     browsers: ['last 3 versions'], // this will override config found in config/targets.js
     include: ['styles/*.css'],
     exclude: ['vendor/bootstrap/**/*'],
-    processTrees: ['all', 'css'],
+    processTrees: ['css'],
     plugins: [
       {
         module: <module>,
@@ -109,6 +109,14 @@ postcssOptions: {
   }
 }
 ```
+
+#### Process Trees
+
+When using the filter version of this add-on the default configuration is now to
+only run on the `css` tree. This will mean that the add-on is only run when CSS
+files are changed. If you need the process to run on other trees or when other
+files are changed, you should update the `processTrees` option to include more
+trees from the following list: `[template, js, css, test, all,]`
 
 Example
 -------
