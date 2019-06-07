@@ -1,5 +1,11 @@
 # master
 
+# 4.2.1
+
+* dependency updates
+* rename option browsers -> overrideBrowserslist
+* update the processTrees default to ‘css’ only
+
 # 4.2.0
 
 * adds processTrees option to filter
