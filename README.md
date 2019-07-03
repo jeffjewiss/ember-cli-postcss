@@ -169,15 +169,18 @@ If you are developing an addon and would like to use `ember-cli-postcss` to proc
 // index.js
 const CssImport = require('postcss-import')
 const PresetEnv = require('postcss-preset-env');
+const { join } = require('path');
+const style_dir = join( __dirname, 'addon', 'styles');
 
 module.exports = {
   options: {
     postcssOptions: {
       compile: {
         enabled: true,
+        includePaths: [style_dir],
         plugins: [
           { module: CssImport },
-          { 
+          {
             module: PresetEnv,
             options: { stage: 3 }
           }
@@ -250,7 +253,7 @@ The service provides 3 methods:
 2. `setVal ({ element = docEl, variableName, variableValue })`
 3. `removeVal ({ element = docEl, variableName })`
 
-A Contrived Example: 
+A Contrived Example:
 
 ```javascript
 import { inject } from '@ember/service'
