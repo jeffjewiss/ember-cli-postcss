@@ -90,7 +90,7 @@
     "ember-source-channel-url": "^2.0.1",
     "ember-try": "^1.2.1",
     "ember-typeface": "^1.0.0",
-    "eslint": "^5.8.0",
+    "eslint": "^6.0.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-ember": "^6.0.0",
     "eslint-plugin-import": "^2.6.0",
