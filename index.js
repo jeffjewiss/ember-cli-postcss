@@ -17,8 +17,8 @@ function PostcssPlugin (addon) {
 
 PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOptions) {
   let inputTrees = [tree]
-  let defaultOptions = { enabled: true }
-  let options = merge.recursive(defaultOptions, this.addon._options.compile, inputOptions)
+  const defaultOptions = { enabled: true }
+  const options = merge.recursive(defaultOptions, this.addon._options.compile, inputOptions)
 
   if (!options.enabled) {
     return tree
@@ -28,11 +28,11 @@ PostcssPlugin.prototype.toTree = function (tree, inputPath, outputPath, inputOpt
     inputTrees = inputTrees.concat(options.includePaths)
   }
 
-  let ext = options.extension || 'css'
-  let paths = options.outputPaths
-  let trees = Object.keys(paths).map((file) => {
-    let input = path.join(inputPath, `${file}.${ext}`)
-    let output = paths[file]
+  const ext = options.extension || 'css'
+  const paths = options.outputPaths
+  const trees = Object.keys(paths).map((file) => {
+    const input = path.join(inputPath, `${file}.${ext}`)
+    const output = paths[file]
     return new PostcssCompiler(inputTrees, input, output, options)
   })
 
@@ -46,8 +46,8 @@ module.exports = {
     this._super.included.apply(this, arguments)
     this._ensureThisImport()
 
-    let env = process.env.EMBER_ENV
-    let overrideBrowserslist = this.project.targets && this.project.targets.browsers
+    const env = process.env.EMBER_ENV
+    const overrideBrowserslist = this.project.targets && this.project.targets.browsers
 
     // Initialize options if none were passed
     this._options = merge.recursive({}, {
@@ -68,7 +68,7 @@ module.exports = {
       }
     }, this._getAddonOptions(app).postcssOptions)
 
-    let isEmber = !!~app.constructor.name.indexOf('Ember')
+    const isEmber = !!~app.constructor.name.indexOf('Ember')
     // Omit the register version import for glimmer apps.
     // For some reason this causes a crash in glimmer.
     if (isEmber) {
@@ -91,14 +91,14 @@ module.exports = {
         return app
       }
       this.import = function importShim (asset, options) {
-        let app = this._findHost()
+        const app = this._findHost()
         app.import(asset, options)
       }
     }
   },
 
   postprocessTree (type, tree) {
-    let { enabled, processTrees } = this._options.filter
+    const { enabled, processTrees } = this._options.filter
 
     if (enabled && processTrees.includes(type)) {
       tree = mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
@@ -108,13 +108,13 @@ module.exports = {
   },
 
   setupPreprocessorRegistry (type, registry) {
-    let addon = this
+    const addon = this
     registry.add('css', new PostcssPlugin(addon))
   },
 
   treeForVendor () {
-    let content = `Ember.libraries.register('Ember Postcss', '${version}');`
-    let registerVersionTree = writeFile(
+    const content = `Ember.libraries.register('Ember Postcss', '${version}');`
+    const registerVersionTree = writeFile(
       'ember-cli-postcss/register-version.js',
       content
     )
