@@ -3,7 +3,7 @@ import { visit, findAll, currentRouteName } from '@ember/test-helpers'
 import { setupApplicationTest } from 'ember-qunit'
 
 function getCssProperty (element, property) {
-  let elem = document.getElementById(element)
+  const elem = document.getElementById(element)
   return window.getComputedStyle(elem, null).getPropertyValue(property)
 }
 
