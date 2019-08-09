@@ -1,5 +1,11 @@
 # master
 
+# 5.0.0
+
+* drop support for Node 6
+* add documentation note on importing styles from addons
+* minor linting updates
+
 # 4.2.1
 
 * dependency updates
