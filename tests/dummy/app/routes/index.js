@@ -7,8 +7,10 @@ export default Route.extend({
   codePrettify: inject(),
 
   activate () {
-    scheduleOnce('afterRender', this, function () {
-      get(this, 'codePrettify').prettify()
-    })
+    scheduleOnce('afterRender', this, this.setupPrettify)
+  },
+
+  setupPrettify () {
+    get(this, 'codePrettify').prettify()
   }
 })
