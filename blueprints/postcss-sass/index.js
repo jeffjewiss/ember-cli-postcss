@@ -11,13 +11,16 @@ module.exports = {
       {
         name: 'cssstats'
       },
-      { name:
+      {
+        name:
         'postcss-stats-reporter'
       },
-      { name:
+      {
+        name:
         'postcss-reporter'
       },
-      { name:
+      {
+        name:
         'autoprefixer'
       }
     ])
