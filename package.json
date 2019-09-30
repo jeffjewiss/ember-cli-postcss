@@ -75,7 +75,7 @@
     "ember-cli-deploy-git": "^1.1.1",
     "ember-cli-eslint": "^5.0.0",
     "ember-cli-fastboot": "^2.0.0",
-    "ember-cli-htmlbars": "^3.0.0",
+    "ember-cli-htmlbars": "^4.0.2",
     "ember-cli-htmlbars-inline-precompile": "^3.0.0",
     "ember-cli-qunit": "^4.3.0",
     "ember-cli-sri": "^2.1.0",
