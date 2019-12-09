@@ -38,7 +38,7 @@
   "license": "MIT",
   "dependencies": {
     "broccoli-file-creator": "^2.1.1",
-    "broccoli-merge-trees": "^3.0.0",
+    "broccoli-merge-trees": "^4.0.0",
     "broccoli-postcss": "^5.0.0",
     "broccoli-postcss-single": "^3.0.0",
     "ember-cli-babel": "^7.1.0",
