@@ -94,7 +94,7 @@
     "eslint-config-standard": "^14.0.1",
     "eslint-plugin-ember": "^7.0.0",
     "eslint-plugin-import": "^2.6.0",
-    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
     "husky": "^3.0.0",
