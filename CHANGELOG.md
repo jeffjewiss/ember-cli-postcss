@@ -1,5 +1,11 @@
 # master
 
+# 6.0.0
+
+* drop support for Node 8
+* BREAKING: updated defaults for caching with the compile step
+* added documentation note on compile caching options
+
 # 5.0.0
 
 * drop support for Node 6

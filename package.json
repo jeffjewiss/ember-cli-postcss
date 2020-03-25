@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-postcss",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Use postcss to process your css with a large selection of JavaScript plug-ins.",
   "directories": {
     "doc": "doc",
