@@ -93,7 +93,7 @@
     "ember-typeface": "^1.0.0",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^14.0.1",
-    "eslint-plugin-ember": "^7.0.0",
+    "eslint-plugin-ember": "^8.1.0",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.0.0",
