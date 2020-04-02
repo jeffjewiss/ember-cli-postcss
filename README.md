@@ -5,7 +5,7 @@
 <h1 align="center">Ember CLI Postcss</h1>
 
 <div align="center">
-  <a href="https://travis-ci.org/jeffjewiss/ember-cli-postcss"><img src="https://travis-ci.org/jeffjewiss/ember-cli-postcss.svg?branch=master" alt="Build Status"></a>
+  <a href="https://github.com/jeffjewiss/ember-cli-postcss/actions?query=workflow%3ACI"><img src="https://github.com/jeffjewiss/ember-cli-postcss/workflows/CI/badge.svg" alt="Build Status"></a>
   <a href="https://www.npmjs.com/package/ember-cli-postcss"><img src="https://img.shields.io/npm/v/ember-cli-postcss.svg" alt="npm version"></a>
   <a href="https://www.npmjs.com/package/ember-cli-postcss"><img src="https://img.shields.io/npm/dm/ember-cli-postcss.svg" alt="Monthly Downloads"></a>
   <a href="https://www.npmjs.com/package/ember-cli-postcss"><img src="https://img.shields.io/npm/dt/ember-cli-postcss.svg" alt="Total Downloads"></a>
