@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [
+          13,
+          12,
+          10
+        ]
+        ember-try-scenario: [
+          ember-release,
+          ember-beta,
+          ember-canary,
+          ember-default
+        ]
+    steps:
+      - name: Check out a copy of the repo
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Ember Test
+        run: node_modules/.bin/ember try:one ${{ matrix.ember-try-scenario }} test --skip-cleanup
