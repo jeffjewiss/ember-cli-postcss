@@ -1,5 +1,4 @@
 import Route from '@ember/routing/route'
-import { get } from '@ember/object'
 import { scheduleOnce } from '@ember/runloop'
 import { inject } from '@ember/service'
 
@@ -11,6 +10,6 @@ export default Route.extend({
   },
 
   setupPrettify () {
-    get(this, 'codePrettify').prettify()
+    this.codePrettify.prettify()
   }
 })
