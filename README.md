@@ -182,24 +182,37 @@ postcssOptions: {
 Developing Addons
 -----------------
 
-If you are developing an addon and would like to use `ember-cli-postcss` to process the CSS to automatically be included in the `vendor.css` of Ember applications consuming the addon, there are 2 steps to follow.
+If you are developing an addon and would like to use `ember-cli-postcss` to process the CSS to automatically be included in the `vendor.css` of Ember applications consuming the addon, there are 3 steps to follow.
 
 1. create your styles in `addon/styles/addon.css` (you can import other CSS files if a postcss import plugin is installed)
-2. configure your addon’s options to process postcss:
+2. Add a "before" option under `ember-addon` key in `package.json`
+```
+// package.json
+  ...
+  "ember-addon": {
+    "before": [
+      "ember-cli-postcss"
+    ],
+    "configPath": "tests/dummy/config"
+  },
+  ...
+```
+
+3. configure your addon’s options to process postcss:
 
 ```javascript
 // index.js
 const CssImport = require('postcss-import')
 const PresetEnv = require('postcss-preset-env');
-const { join } = require('path');
-const style_dir = join( __dirname, 'addon', 'styles');
 
 module.exports = {
-  options: {
-    postcssOptions: {
+  name: require('./package').name,
+  included: function(app) {
+    this._super.included.apply(this, arguments);
+    app.options = app.options || {};
+    app.options.postcssOptions = {
       compile: {
         enabled: true,
-        includePaths: [style_dir],
         plugins: [
           { module: CssImport },
           {
@@ -209,9 +222,9 @@ module.exports = {
         ]
       }
     }
-  }
+  },
   ...
-}
+};
 ```
 
 Migrating from other Processors
