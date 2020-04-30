@@ -16,7 +16,6 @@ jobs:
         ember-try-scenario: [
           ember-release,
           ember-beta,
-          ember-canary,
           ember-default
         ]
     steps:
