@@ -1,5 +1,9 @@
 # master
 
+# 6.0.1
+
+* use JSON.stringify when writing sourcemap data (fix for Node 14)
+
 # 6.0.0
 
 * drop support for Node 8
