@@ -68,5 +68,5 @@ function cssVariablesSupported () {
   return window &&
     window.CSS &&
     window.CSS.supports &&
-    window.CSS.supports('--test-var', 0)
+    window.CSS.supports('color', 'var(--fake-var)')
 }
