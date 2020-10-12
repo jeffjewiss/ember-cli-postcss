@@ -69,7 +69,7 @@
     "babel-eslint": "^10.0.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "^3.10.1",
-    "ember-cli-app-version": "^3.0.0",
+    "ember-cli-app-version": "^4.0.0",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-deploy": "^1.0.1",
     "ember-cli-deploy-build": "^2.0.0",
