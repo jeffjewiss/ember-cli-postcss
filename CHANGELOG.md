@@ -1,5 +1,11 @@
 # master
 
+# 7.0.0
+
+* BREAKING: use Postcss 8
+* npm audit security fixes
+* use of native classes
+
 # 6.0.1
 
 * use JSON.stringify when writing sourcemap data (fix for Node 14)

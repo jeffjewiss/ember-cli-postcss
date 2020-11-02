@@ -32,10 +32,10 @@ ember install ember-cli-postcss
 Compatibility
 -------------
 
-Due to changes in the plugin API of Postcss V8 some plugins will need to be updated after upgrading Postcss. This should be as simple as updating this package from v6 to v7 (once released), however compatibility is not guaranteed.
+Due to changes in the plugin API of Postcss V8 some plugins will need to be updated after upgrading Postcss. This should be as simple as updating this package from v6 to v7, however compatibility is not guaranteed.
 
-- V7 broccoli-postcss -> Postcss V8
-- V6 broccoli-postcss -> Postcss V7
+- V7 ember-cli-postcss -> Postcss V8
+- V6 ember-cli-postcss -> Postcss V7
 
 Usage
 -----
