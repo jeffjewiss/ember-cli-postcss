@@ -39,8 +39,8 @@
   "dependencies": {
     "broccoli-file-creator": "^2.1.1",
     "broccoli-merge-trees": "^4.0.0",
-    "broccoli-postcss": "^5.1.0",
-    "broccoli-postcss-single": "^4.0.0",
+    "broccoli-postcss": "^6.0.0",
+    "broccoli-postcss-single": "^5.0.0",
     "ember-cli-babel": "^7.1.0",
     "merge": "^1.2.0"
   },
@@ -87,7 +87,7 @@
     "ember-maybe-import-regenerator": "^0.1.6",
     "ember-resolver": "^8.0.0",
     "ember-router-scroll": "^3.2.0",
-    "ember-source": "^3.0.0",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/beta/shas/f70aa3ed0dda24728ff8cd917d8f0d6576eb7d41.tgz",
     "ember-source-channel-url": "^3.0.0",
     "ember-try": "^1.2.1",
     "ember-typeface": "^1.0.0",

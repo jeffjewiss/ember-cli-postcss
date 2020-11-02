@@ -6,7 +6,7 @@ const merge = require('merge')
 const version = require('./package.json').version // eslint-disable-line
 const writeFile = require('broccoli-file-creator')
 const mergeTrees = require('broccoli-merge-trees')
-const postcssFilter = require('broccoli-postcss')
+const PostcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
 
 function PostcssPlugin (addon) {
@@ -101,7 +101,7 @@ module.exports = {
     const { enabled, processTrees } = this._options.filter
 
     if (enabled && processTrees.includes(type)) {
-      tree = mergeTrees([tree, postcssFilter(tree, this._options.filter)], { overwrite: true })
+      tree = mergeTrees([tree, new PostcssFilter(tree, this._options.filter)], { overwrite: true })
     }
 
     return tree
