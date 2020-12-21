@@ -103,7 +103,7 @@
     "postcss-color-function": "^4.1.0",
     "postcss-color-gray": "^5.0.0",
     "postcss-custom-properties": "^10.0.0",
-    "postcss-import": "^13.0.0",
+    "postcss-import": "^14.0.0",
     "postcss-nesting": "^7.0.0",
     "prember": "^1.0.0",
     "tachyons": "^4.7.4",
