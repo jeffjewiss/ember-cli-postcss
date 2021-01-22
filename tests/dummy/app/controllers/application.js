@@ -1,11 +1,11 @@
-import Controller from '@ember/controller'
-import config from '../config/environment'
+import Controller from '@ember/controller';
+import config from '../config/environment';
 
-const versionRegExp = /\d+[.]\d+[.]\d+/
+const versionRegExp = /\d+[.]\d+[.]\d+/;
 const {
-  APP: { version }
-} = config
+  APP: { version },
+} = config;
 
 export default Controller.extend({
-  addonVersion: version.match(versionRegExp)[0]
-})
+  addonVersion: version.match(versionRegExp)[0],
+});

@@ -1,26 +1,22 @@
-'use strict'
+'use strict';
 
-const EmberAddon = require('ember-cli/lib/broccoli/ember-addon')
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function (defaults) {
-  const app = new EmberAddon(defaults, {
+  let app = new EmberAddon(defaults, {
     prember: {
       // GitHub Pages uses this filename to serve 404s
       emptyFile: '404.html',
-      urls: [
-        '/',
-        '/docs',
-        '/library'
-      ]
+      urls: ['/', '/docs', '/library'],
     },
     outputPaths: {
       app: {
         css: {
           app: '/assets/dummy.css',
           primary: '/assets/primary.css',
-          secondary: '/assets/secondary.css'
-        }
-      }
+          secondary: '/assets/secondary.css',
+        },
+      },
     },
     postcssOptions: {
       compile: {
@@ -28,20 +24,20 @@ module.exports = function (defaults) {
           { module: require('postcss-import') },
           {
             module: require('postcss-custom-properties'),
-            options: { preserve: true }
+            options: { preserve: true },
           },
-          { module: require('postcss-nesting') }
-        ]
+          { module: require('postcss-nesting') },
+        ],
       },
       filter: {
         enabled: true,
         plugins: [
           { module: require('postcss-color-gray') },
-          { module: require('postcss-color-function') }
-        ]
-      }
-    }
-  })
+          { module: require('postcss-color-function') },
+        ],
+      },
+    },
+  });
 
   /*
     This build file specifies the options for the dummy test app of this
@@ -50,5 +46,5 @@ module.exports = function (defaults) {
     behave. You most likely want to be modifying `./index.js` or app's build file
   */
 
-  return app.toTree()
-}
+  return app.toTree();
+};

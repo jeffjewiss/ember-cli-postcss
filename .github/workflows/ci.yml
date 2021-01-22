@@ -10,14 +10,15 @@ jobs:
       matrix:
         node: [
           14,
-          13,
           12,
           10
         ]
         ember-try-scenario: [
           ember-release,
           ember-beta,
-          ember-default
+          ember-lts-3.16,
+          ember-lts-3.20,
+          ember-classic
         ]
     steps:
       - name: Check out a copy of the repo

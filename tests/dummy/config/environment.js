@@ -1,8 +1,8 @@
 /* eslint-env node */
-'use strict'
+'use strict';
 
 module.exports = function (environment) {
-  const ENV = {
+  let ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
@@ -11,8 +11,12 @@ module.exports = function (environment) {
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
-        // e.g. 'with-controller': true
-      }
+        // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
+      },
+      EXTEND_PROTOTYPES: {
+        // Prevent Ember Data from overriding Date.parse.
+        Date: false,
+      },
     },
 
     APP: {
@@ -20,12 +24,12 @@ module.exports = function (environment) {
       // when it is created
     },
     'ember-code-prettify': {
-      skin: ''
+      skin: '',
     },
     fastboot: {
-      hostWhitelist: ['localhost:4200', 'jeffjewiss.github.io']
-    }
-  }
+      hostWhitelist: ['localhost:4200', 'jeffjewiss.github.io'],
+    },
+  };
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -37,20 +41,20 @@ module.exports = function (environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none'
-    ENV.rootURL = '/'
+    ENV.locationType = 'none';
+    ENV.rootURL = '/';
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false
-    ENV.APP.LOG_VIEW_LOOKUPS = false
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.APP.rootElement = '#ember-testing'
-    ENV.APP.autoboot = false
+    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
-    ENV.rootURL = '/ember-cli-postcss'
+    ENV.rootURL = '/ember-cli-postcss';
   }
 
-  return ENV
-}
+  return ENV;
+};

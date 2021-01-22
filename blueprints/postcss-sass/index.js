@@ -1,28 +1,25 @@
 module.exports = {
   name: 'postcss-sass',
 
-  normalizeEntityName () {}, // no-op since we're just adding dependencies
+  normalizeEntityName() {}, // no-op since we're just adding dependencies
 
-  afterInstall () {
+  afterInstall() {
     return this.addPackagesToProject([
       {
-        name: '@csstools/postcss-sass'
+        name: '@csstools/postcss-sass',
       },
       {
-        name: 'cssstats'
+        name: 'cssstats',
       },
       {
-        name:
-        'postcss-stats-reporter'
+        name: 'postcss-stats-reporter',
       },
       {
-        name:
-        'postcss-reporter'
+        name: 'postcss-reporter',
       },
       {
-        name:
-        'autoprefixer'
-      }
-    ])
-  }
-}
+        name: 'autoprefixer',
+      },
+    ]);
+  },
+};
