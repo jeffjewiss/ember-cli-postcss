@@ -91,7 +91,7 @@
     "ember-try": "^1.2.1",
     "ember-typeface": "^1.0.0",
     "eslint": "^7.12.1",
-    "eslint-config-standard": "^14.0.1",
+    "eslint-config-standard": "^16.0.2",
     "eslint-plugin-ember": "^9.3.0",
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-node": "^11.0.0",
