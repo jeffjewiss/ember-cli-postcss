@@ -104,7 +104,7 @@
     "postcss-color-gray": "^5.0.0",
     "postcss-custom-properties": "^11.0.0",
     "postcss-import": "^14.0.0",
-    "postcss-nesting": "^7.0.0",
+    "postcss-nesting": "^8.0.1",
     "prember": "^1.0.0",
     "tachyons": "^4.7.4",
     "typeface-lato": "^1.1.13",
