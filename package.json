@@ -37,7 +37,6 @@
   "author": "Jeff Jewiss <jeffjewiss@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "broccoli-file-creator": "^2.1.1",
     "broccoli-merge-trees": "^4.0.0",
     "broccoli-postcss": "^6.0.0",
     "broccoli-postcss-single": "^5.0.0",
