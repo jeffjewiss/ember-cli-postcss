@@ -1,5 +1,9 @@
 # master
 
+# 7.0.1
+
+* npm audit security fixes (merge 2.1.1)
+
 # 7.0.0
 
 * BREAKING: use Postcss 8
