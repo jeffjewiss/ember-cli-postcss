@@ -3,8 +3,6 @@
 
 const path = require('path')
 const merge = require('merge')
-const version = require('./package.json').version // eslint-disable-line
-const writeFile = require('broccoli-file-creator')
 const mergeTrees = require('broccoli-merge-trees')
 const postcssFilter = require('broccoli-postcss')
 const PostcssCompiler = require('broccoli-postcss-single')
@@ -67,13 +65,6 @@ module.exports = {
         plugins: []
       }
     }, this._getAddonOptions(app).postcssOptions)
-
-    const isEmber = !!~app.constructor.name.indexOf('Ember')
-    // Omit the register version import for glimmer apps.
-    // For some reason this causes a crash in glimmer.
-    if (isEmber) {
-      this.import('vendor/ember-cli-postcss/register-version.js')
-    }
   },
 
   _getAddonOptions (app) {
@@ -107,18 +98,8 @@ module.exports = {
     return tree
   },
 
-  setupPreprocessorRegistry (type, registry) {
+  setupPreprocessorRegistry (_type, registry) {
     const addon = this
     registry.add('css', new PostcssPlugin(addon))
-  },
-
-  treeForVendor () {
-    const content = `Ember.libraries.register('Ember Postcss', '${version}');`
-    const registerVersionTree = writeFile(
-      'ember-cli-postcss/register-version.js',
-      content
-    )
-
-    return mergeTrees([registerVersionTree])
   }
 }
