@@ -113,7 +113,17 @@ module.exports = {
   },
 
   treeForVendor () {
-    const content = `Ember.libraries.register('Ember Postcss', '${version}');`
+    const content = `
+{
+  let Ember;
+  try {
+    Ember = requireModule('ember')['default'];
+  } catch (error) {
+    Ember = window.Ember;
+  }
+  Ember.libraries.register('Ember Postcss', '${version}');
+}
+`
     const registerVersionTree = writeFile(
       'ember-cli-postcss/register-version.js',
       content
