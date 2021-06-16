@@ -1,5 +1,9 @@
 # master
 
+# 6.0.2
+
+* remove Ember global
+
 # 6.0.0
 
 * drop support for Node 8
