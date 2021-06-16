@@ -1,5 +1,9 @@
 # master
 
+# 7.0.2
+
+- remove ember global to fix embroider builds
+
 # 7.0.1
 
 * npm audit security fixes (merge 2.1.1)
@@ -145,4 +149,3 @@
 # 2.0.0
 
 * updates `broccoli-postcss` to version 2.0 (Postcss v5)
-
