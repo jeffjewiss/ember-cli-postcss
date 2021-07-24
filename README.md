@@ -192,7 +192,8 @@ Developing Addons
 
 If you are developing an addon and would like to use `ember-cli-postcss` to process the CSS to automatically be included in the `vendor.css` of Ember applications consuming the addon, there are 3 steps to follow.
 
-1. create your styles in `addon/styles/addon.css` (you can import other CSS files if a postcss import plugin is installed)
+1. Install `ember-cli-postcss` as both a dependency and development dependency
+1. Create your styles in `addon/styles/addon.css` (you can import other CSS files if a postcss import plugin is installed)
 2. Add a "before" option under `ember-addon` key in `package.json`
 ```
 // package.json
@@ -232,6 +233,33 @@ module.exports = {
     }
   },
   ...
+};
+```
+
+4. If you're not using PostCSS to process your "dummy" app's CSS make sure you disable `ember-cli-postcss` in your `ember-cli-build.js` file:
+
+```javascript
+use strict';
+
+const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+
+module.exports = function (defaults) {
+  let app = new EmberAddon(defaults, {
+    postcssOptions: {
+      compile: { enabled: false },
+      filter: { enabled: false }
+    },
+  });
+
+  /*
+    This build file specifies the options for the dummy test app of this
+    addon, located in `/tests/dummy`
+    This build file does *not* influence how the addon or the app using it
+    behave. You most likely want to be modifying `./index.js` or app's build file
+  */
+
+  const { maybeEmbroider } = require('@embroider/test-setup');
+  return maybeEmbroider(app);
 };
 ```
 
