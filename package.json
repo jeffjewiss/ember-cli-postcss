@@ -82,7 +82,7 @@
     "ember-code-prettify": "^0.0.1",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-load-initializers": "^2.0.0",
-    "ember-maybe-import-regenerator": "^0.1.6",
+    "ember-maybe-import-regenerator": "^1.0.0",
     "ember-resolver": "^8.0.0",
     "ember-router-scroll": "^3.2.0",
     "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/beta/shas/f70aa3ed0dda24728ff8cd917d8f0d6576eb7d41.tgz",
