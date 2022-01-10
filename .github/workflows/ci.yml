@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [17, 16, 14]
+        node: [14]
         ember-try-scenario: [ember-release, ember-beta, ember-default]
     steps:
       - name: Check out a copy of the repo

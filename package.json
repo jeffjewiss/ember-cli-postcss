@@ -14,7 +14,7 @@
     "lint": "eslint ."
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 14"
   },
   "husky": {
     "hooks": {
@@ -100,6 +100,6 @@
     "typeface-oxygen": "^1.1.13"
   },
   "volta": {
-    "node": "16.13.1"
+    "node": "14.18.2"
   }
 }
