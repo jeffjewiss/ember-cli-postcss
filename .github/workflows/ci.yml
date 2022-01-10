@@ -8,17 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [
-          14,
-          13,
-          12,
-          10
-        ]
-        ember-try-scenario: [
-          ember-release,
-          ember-beta,
-          ember-default
-        ]
+        node: [17, 16, 14]
+        ember-try-scenario: [ember-release, ember-beta, ember-default]
     steps:
       - name: Check out a copy of the repo
         uses: actions/checkout@v2
