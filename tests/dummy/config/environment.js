@@ -19,9 +19,6 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
-    'ember-code-prettify': {
-      skin: ''
-    },
     fastboot: {
       hostWhitelist: ['localhost:4200', 'jeffjewiss.github.io']
     }
