@@ -1,9 +1,10 @@
 import Service from '@ember/service'
 import { debug } from '@ember/debug'
 
-const docEl = window && window.document ? window.document.documentElement : null
+const docEl =
+  window && window.document ? window.document.documentElement : null
 
-export default Service.extend({
+export default class extends Service {
   getVal ({ element = docEl, variableName }) {
     if (!element) {
       debug('No element provided')
@@ -18,9 +19,11 @@ export default Service.extend({
       }
     } else {
       debug('CSS variables are not supported')
-      debug(`Tried to get custom property on <${element}> with name ${variableName}`)
+      debug(
+        `Tried to get custom property on <${element}> with name ${variableName}`
+      )
     }
-  },
+  }
 
   setVal ({ element = docEl, variableName, variableValue }) {
     if (!element) {
@@ -36,9 +39,11 @@ export default Service.extend({
       }
     } else {
       debug('CSS variables are not supported')
-      debug(`Tried to set custom property on <${element}> with name ${variableName} and value ${variableValue}`)
+      debug(
+        `Tried to set custom property on <${element}> with name ${variableName} and value ${variableValue}`
+      )
     }
-  },
+  }
 
   removeVal ({ element = docEl, variableName }) {
     if (!element) {
@@ -54,19 +59,23 @@ export default Service.extend({
       }
     } else {
       debug('CSS variables are not supported')
-      debug(`Tried to remove custom property on <${element}> with name ${variableName}`)
+      debug(
+        `Tried to remove custom property on <${element}> with name ${variableName}`
+      )
     }
-  },
+  }
 
   supported () {
     return cssVariablesSupported()
   }
-})
+}
 
 function cssVariablesSupported () {
   // Relies on the CSS suports API in the browser
-  return window &&
+  return (
+    window &&
     window.CSS &&
     window.CSS.supports &&
     window.CSS.supports('color', 'var(--fake-var)')
+  )
 }

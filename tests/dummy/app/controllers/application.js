@@ -6,6 +6,8 @@ const {
   APP: { version }
 } = config
 
-export default Controller.extend({
-  addonVersion: version.match(versionRegExp)[0]
-})
+export default class extends Controller {
+  addonVersion () {
+    return version.match(versionRegExp)[0]
+  }
+}
