@@ -24,7 +24,11 @@
     "doc": "doc",
     "test": "tests"
   },
-  "files": ["blueprints", "config/environment.js", "index.js"],
+  "files": [
+    "blueprints",
+    "config/environment.js",
+    "index.js"
+  ],
   "scripts": {
     "build": "ember build",
     "deploy": "ember deploy production",
@@ -51,6 +55,7 @@
     "@babel/preset-env": "^7.16.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
+    "@embroider/test-setup": "0.50.1",
     "@glimmer/component": "^1.0.0",
     "@glimmer/tracking": "^1.0.0",
     "broccoli-asset-rev": "^3.0.0",
@@ -104,10 +109,14 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://jeffjewiss.github.io/ember-cli-postcss",
-    "before": ["broccoli-asset-rev"]
+    "before": [
+      "broccoli-asset-rev"
+    ]
   },
   "standard": {
-    "ignore": ["testem.js"]
+    "ignore": [
+      "testem.js"
+    ]
   },
   "volta": {
     "node": "14.18.2"
