@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-postcss",
-  "version": "7.0.2",
+  "version": "7.1.0",
   "description": "Use postcss to process your css with a large selection of JavaScript plug-ins.",
   "keywords": [
     "ember-addon",
@@ -24,7 +24,11 @@
     "doc": "doc",
     "test": "tests"
   },
-  "files": ["blueprints", "config/environment.js", "index.js"],
+  "files": [
+    "blueprints",
+    "config/environment.js",
+    "index.js"
+  ],
   "scripts": {
     "build": "ember build",
     "deploy": "ember deploy production",
@@ -104,10 +108,14 @@
   "ember-addon": {
     "configPath": "tests/dummy/config",
     "demoURL": "https://jeffjewiss.github.io/ember-cli-postcss",
-    "before": ["broccoli-asset-rev"]
+    "before": [
+      "broccoli-asset-rev"
+    ]
   },
   "standard": {
-    "ignore": ["testem.js"]
+    "ignore": [
+      "testem.js"
+    ]
   },
   "volta": {
     "node": "14.18.2"

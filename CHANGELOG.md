@@ -1,5 +1,14 @@
 # master
 
+# 7.1.0
+
+- update testing scenarios for default/release/canary
+- minimize node testing to only 14
+- “octanify” the add-on
+- fix qunit setup
+- update dependencies
+- dependency security bumps via dependabot
+
 # 7.0.2
 
 - remove ember global to fix embroider builds
