@@ -1,5 +1,14 @@
 # master
 
+# 8.0.0
+
+- same as v7.1.0
+
+# 7.2.0
+
+- reverts 7.1.0 back to 7.0.2
+- this release contains the same code as 7.0.2
+
 # 7.1.0
 
 - update testing scenarios for default/release/canary
