@@ -1,5 +1,19 @@
 # master
 
+# 7.2.0
+
+- reverts 7.1.0 back to 7.0.2
+- this release contains the same code as 7.0.2
+
+# 7.1.0
+
+- update testing scenarios for default/release/canary
+- minimize node testing to only 14
+- “octanify” the add-on
+- fix qunit setup
+- update dependencies
+- dependency security bumps via dependabot
+
 # 7.0.2
 
 - remove ember global to fix embroider builds
