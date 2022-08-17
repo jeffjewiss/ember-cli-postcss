@@ -91,6 +91,7 @@
     "postcss-import": "^14.0.0",
     "postcss-nesting": "^10.1.1",
     "prember": "^1.1.0",
+    "qunit": "^2.19.1",
     "tachyons": "^4.7.4",
     "typeface-lato": "^1.1.13",
     "typeface-oxygen": "^1.1.13",
