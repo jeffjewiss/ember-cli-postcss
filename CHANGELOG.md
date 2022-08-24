@@ -1,5 +1,10 @@
 # master
 
+# 8.1.0
+
+- dependency updates
+- float dependencies
+
 # 8.0.0
 
 - same as v7.1.0
