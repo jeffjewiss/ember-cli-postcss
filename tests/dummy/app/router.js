@@ -6,6 +6,7 @@ class Router extends EmberRouter {
   rootURL = config.rootURL
 }
 
+/* eslint-disable array-callback-return */
 Router.map(function () {
   this.route('test')
   this.route('docs')

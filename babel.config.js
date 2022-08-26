@@ -1,4 +1,3 @@
-/* eslint-disable node/no-unpublished-require */
 const { buildEmberPlugins } = require('ember-cli-babel')
 
 module.exports = function (api) {
