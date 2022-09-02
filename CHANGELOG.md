@@ -1,5 +1,10 @@
 # master
 
+# 8.2.0
+
+- fix bug where non css files are parsed by default (extentions)
+- dependency updates
+
 # 8.1.0
 
 - dependency updates
