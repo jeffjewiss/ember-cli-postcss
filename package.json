@@ -92,7 +92,7 @@
     "postcss-color-function": "^4.1.0",
     "postcss-color-gray": "^5.0.0",
     "postcss-custom-properties": "^12.0.4",
-    "postcss-import": "^14.0.0",
+    "postcss-import": "^15.0.0",
     "postcss-nesting": "^10.1.1",
     "prember": "^1.1.0",
     "qunit": "^2.19.1",
